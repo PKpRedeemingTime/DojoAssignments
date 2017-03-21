@@ -1,0 +1,37 @@
+Open terminal and navigate to your desktop
+	cd desktop
+
+Create a new folder and call it 'gittest'
+	md gittest
+
+Navigate into your new folder, initialize your git repositpory
+	cd gittest
+	git init
+
+Create three files, 'index.html', 'styles.css', and 'about.Me.txt' and make an initial commit with a comment
+	copy NUL index.html
+	copy NUL styles.css
+	copy NUL aboutMe.txt
+	git add index.html
+	git add styles.css
+	git add aboutMe.txt
+	git commit -m "Added three files"
+
+Write a small bio of yourself in aboutMe.txt, commit the changes with the message "updated aboutMe"
+	write bio in the doc
+	git add aboutMe.txt
+	git commit -m "updated aboutMe"
+
+Add your favorite movie to your aboutMe.txt and commit the changes with the message "added favorite movie to aboutMe"
+	add favorite movie to doc
+	git add aboutMe.txt
+	git commit -m "added favorite movie to aboutMe"
+
+View the logs to see your commit history
+	git log
+Revert to your last commit, change your favorite movie to your favorite book and recommit
+	git revert 151208ac
+	add fo=avorite book to aboutMe
+	git add aboutMe.txt
+	git commit -m "replaced favorite movie with favorite book in aboutMe"
+
