@@ -1,0 +1,29 @@
+Create a new repository on GITHUB and call it DojoAssignments
+	created new repository in github via the plus button and named it appropriately
+
+Open your command prompt, navigate to your dojoassignments folder
+	cd desktop
+	cd dojoassignments
+
+Initialize a git repository in your dojoassignments directory
+	git init
+
+Add, commit and push these changes to github
+	copy NUL index.html
+	copy NUL styles.css
+	git add .
+	git commit -m "added files to new folder"
+	git remote add origin https://github.com/PKpRedeemingTime/DojoAssignments.git
+	git push -u origin master
+
+Make a readMe.md in your dojoassignments folder explaining about its contents
+	copy NUL readMe.md
+	added text to .md
+	git add .
+	git commit -m "added a .md"
+	git push -u origin master
+
+Do a status check to see the changes made, then add, commit and push your changes
+	git status
+	nothing to commit, working tree clean
+
