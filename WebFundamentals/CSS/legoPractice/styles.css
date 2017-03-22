@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: 1px dashed red;
+}
+.wrapper{
+    width: 950px;
+    /*background-color: teal;*/
+    margin: 0px auto;
+    padding: 20px;
+    color: white;
+    background: radial-gradient(teal, black);
+}
+span{
+    color: black;
+}
+#yellow{
+    color: yellow;
+    font-weight: bold;
+    text-decoration: underline;
+}
+ul{
+    margin-bottom: 10px;
+    background-color: lightgray;
+    color: black;
+    padding: 10px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}

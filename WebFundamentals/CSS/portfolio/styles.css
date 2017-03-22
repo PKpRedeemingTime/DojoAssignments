@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#header{
+    width: 975px;
+    margin: 0px auto;
+    padding: 20px;
+    display: flex;
+    background: radial-gradient(#f3f3f3, #fafafa);
+    justify-content: space-between;
+}
+h1{
+    font-family: sans-serif;
+}
+#header-p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+#body{
+    background: radial-gradient(#6f5964, #1c0b10);
+    width: 975px;
+    padding: 20px;
+    /*display: flex;*/
+    justify-content: space-around;
+    margin: 0px auto;
+}
+#row-one{
+    display: flex;
+    justify-content: space-between;
+    width: 975px;
+}
+.paragraph{
+    padding: 10px;
+}
+.paragraph-2{
+    height: 181px;
+    padding: 10px;
+}
+#headshot{
+    border: 3px solid #c0c0c0;
+}
+#about{
+    width: auto;
+    padding: 0px;
+    background: linear-gradient(-90deg, #dccddb, #fefefe);
+    margin-left: 20px;
+}
+#about-head{
+    background: radial-gradient(#878593, #b1b0b4);
+    width: 550px;
+    color: white;
+    padding: 10px;
+}
+#row-one-text{
+    margin: 10px;
+}
+a{
+    color: black;
+}
+#row-two{
+    display: flex;
+    justify-content: space-between;
+    width: 975px;
+    margin-top: 20px;
+}
+#la-mode{
+    width: auto;
+    padding: 0px;
+    display: inline-block;
+    background-color: #dccddb;
+}
+#la-mode-head{
+    width: 285px;
+    background: radial-gradient(#878593, #b1b0b4);
+    color: white;
+    padding: 10px;
+}
+#la-mode-text{
+    background: linear-gradient(-90deg, #dccddb, #fefefe);
+    width: 305px;
+}
+#la-mode-technologies{
+    width: 285px;
+    background: radial-gradient(#878593, #b1b0b4);
+    color: white;
+    padding: 10px;
+}
+.techno-logos{
+    background: linear-gradient(-90deg, #dccddb, #fefefe);
+}
+#family-contacts{
+    width: auto;
+    padding: 0px;
+    background-color: #dccddb;
+}
+#family-contacts-head{
+    width: 285px;
+    background: radial-gradient(#878593, #b1b0b4);
+    color: white;
+    padding: 10px;
+}
+#family-contacts-text{
+    background: linear-gradient(-90deg, #dccddb, #fefefe);
+    width: 305px;
+}
+#family-contacts-technologies{
+    width: 285px;
+    background: radial-gradient(#878593, #b1b0b4);
+    color: white;
+    padding: 10px;
+}
+#fiveEleven{
+    width: auto;
+    padding: 0px;
+    background-color: #dccddb;
+}
+#fiveEleven-head{
+    width: 285px;
+    background: radial-gradient(#878593, #b1b0b4);
+    color: white;
+    padding: 10px;
+}
+#fiveEleven-text{
+    background: linear-gradient(-90deg, #dccddb, #fefefe);
+    width: 305px;
+}
+#fiveEleven-technologies{
+    width: 285px;
+    background: radial-gradient(#878593, #b1b0b4);
+    color: white;
+    padding: 10px;
+}
+#footer{
+    width: 975px;
+    margin: 20px auto 0px auto;
+    padding-bottom: 10px;
+    display: flex;
+    background: radial-gradient(-90deg, #dccddb, #fefefe);
+    justify-content: space-between;
+}
+#footer-email{
+    padding: 10px;
+    display: flex;
+}
+#footer-contact{
+    display: flex;
+}
+input{
+    background: radial-gradient(-90deg, #dccddb, #fefefe);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 115px;
+    margin-top: 10px;
+    margin-bottom: 10px;   
+}
