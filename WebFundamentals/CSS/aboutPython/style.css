@@ -1,0 +1,138 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif 10px;
+    /*outline: 1px red dashed;*/
+}
+#body{
+    width: 970px;
+    height: auto;
+    margin: 0px auto;
+    background-color: #245176;
+    padding: 10px 0px 10px 0px;
+}
+#header{
+    margin: 10px;
+    display: flex;
+    height: 120px;
+    padding: 10px;
+    justify-content: space-between;
+}
+#header-right{
+    color: white;
+}
+#header-menu{
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    color: white;
+    height: auto;
+    background-color: #467dac;
+    padding: 5px;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 10px;
+}
+#header-body{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.span5{
+    color: yellow;
+    text-decoration: underline;
+}
+#search{
+    background-color: #444444;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 2px;
+}
+#search-box{
+    height: 30px;
+    border-bottom: 2px lightgray;
+    border-right: 2px lightgray;
+    text-align: center;
+    color: gray;
+    margin: 20px;
+}
+#go{
+    background-color: #245176;
+    height: 20px;
+    width: 30px;
+    border-bottom: 2px lightgray;
+    border-right: 2px lightgray;
+    border-radius: 5px;
+    margin: 25px 20px 20px 0px;
+    color: white;
+    padding: 3px;
+}
+#info{
+    display: flex;
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+    justify-content: space-around;
+    background-color: white;
+    padding: 5px;
+}
+#footer{
+    width: 970px;
+    height: 100px;
+    margin: 10px auto 0px;
+    color: #73a7d4;
+    background: linear-gradient(#3374ac, #73a7d5);
+    text-align: center;
+    padding-top: 25px;
+}
+#footer-list{
+    width: 600px;
+    display: flex;
+    list-style: none;
+    margin-top: 40px;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+#body-menu{
+    list-style: circle;
+    list-style-position: inside;
+    color: white;
+    text-decoration: underline;
+}
+#body-list{
+    color: #e8c637;
+    list-style: none;
+    text-align: center;
+}
+#info-list-1, #info-list-2{
+    color: #9bc0e0;
+    list-style: inside square;
+}
+#span2{
+    color: #9bc0e0;
+}
+#span3{
+    color: black;
+}
+#span4{
+    color: white;
+}
+.info-box{
+    margin-top: 10px;
+    width: 300px;
+    border-top: 5px solid #73a7d5;
+}
+.italic{
+    font-style: italic;
+}
+#content{
+    color: white;
+    width: 500px;
+}
+#copyright{
+    margin-top: 20px;
+}
