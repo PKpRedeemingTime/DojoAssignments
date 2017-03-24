@@ -27,7 +27,7 @@
 }
 .shebang{
     display: inline-flex;
-    background: radial-gradient(white, ##efefef);
+    background: linear-gradient(white, #e3e3e3);
 }
 .sidebar{
     width: 200px;
