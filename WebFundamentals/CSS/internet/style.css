@@ -1,0 +1,113 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    margin: 0px auto;
+    width: 1000px;
+    padding: 10px;
+}
+.internet-header{
+    display: flex;
+    justify-content: flex-start;
+}
+.globe{
+    position: relative;
+    top: 10px;
+}
+.internet{
+    margin-top: 25px;
+}
+.span-1{
+    color: #26679f;
+}
+.www{
+    padding: 5px;
+    background-color: #25679f;
+}
+.shebang{
+    display: inline-flex;
+    background: radial-gradient(white, ##efefef);
+}
+.sidebar{
+    width: 200px;
+    padding: 5px;
+}
+.sidebar-top{
+    border-bottom: 1px solid gray;
+}
+.span-2{
+    color: red;
+}
+.span-3{
+    color: #326fa4;
+}
+input{
+    display: block;
+}
+.video{
+    width: 200px;
+    color: white;
+    background-color: #3a77ac;
+    border-radius: 5px;
+}
+.resources{
+    width: 200px;
+    color: white;
+    background-color: #ee8400;
+    border-radius: 5px;
+}
+.sidebar-bottom{
+    text-align: center;
+    background-image: url("ad_background.png");
+    color: white;
+}
+.reinvent{
+
+}
+.learn{
+    margin-left: 58px;
+}
+.content{
+    display: inline-block;
+}
+.content-header{
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid gray;
+}
+.dns{
+
+}
+.phone{
+    display: flex;
+}
+.contact{
+
+}
+.content-text{
+
+}
+h4{
+    color: #3a77ac;
+}
+.span-4{
+    color: #3aafc1;
+}
+ul{
+    list-style-position: inside;
+    margin-left: 10px;
+}
+ol{
+    list-style-position: inside;
+    margin-left: 10px;
+}
+.footer{
+    display: flex;
+    border-left: 5px solid #3aafc1;
+    border-top: 5px solid #3aafc1;
+    border-right: 5px solid #3aafc1;
+}
+.flow{
+    margin-left: 280px;
+}
