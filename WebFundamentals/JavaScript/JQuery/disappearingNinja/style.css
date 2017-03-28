@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    margin: 0px auto;
+    width: 1000px;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 15px 0px;
+}
