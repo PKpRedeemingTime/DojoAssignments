@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /*outline: 1px red dashed;*/
+}
+.wrapper{
+    margin: 0px auto;
+    width: 1000px;
+}
+.divs{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 5px solid black;
+    height: 50px;
+    padding: 20px;
+}
+.click{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 5px solid black;
+    height: 50px;
+    padding: 20px;
+    border-top: 5px solid black;
+}
+.buttons{
+    
+}
+h1{
+    margin-left: 250px;
+    margin-bottom: 15px;
+}
+button{
+    height: 25px;
+    margin-top: 15px;
+}
+h3{
+    margin-left: 75px;
+    font-size: 45px;
+}
+.footer{
+    display: none;
+}
+.background{
+    background-color: yellow;
+}

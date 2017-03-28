@@ -1,0 +1,11 @@
+*{
+    margin: 0px auto;
+    padding: 0px;
+}
+body{
+    padding: 20px;
+}
+img{
+    display: block;
+    margin-bottom: 10px;
+}
