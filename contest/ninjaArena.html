@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Ninja Arena</title>
+    <meta charset='UTF-8'>
+    <link href='ninjaArena.css' rel='stylesheet'>
+    <script type='text/javascript' src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type='text/javascript'>
+        $(document).ready(function(){
+            $('.beach').hover(function(){
+                $('.wrapper').addClass('background1');
+            });
+            $('.planet').hover(function(){
+                $('.wrapper').addClass('background2');
+            });
+            $('.dojo').hover(function(){
+                $('.wrapper').addClass('background3');
+            });
+            $('.forest').hover(function(){
+                $('.wrapper').addClass('background4');
+            });
+            $('.matrix').hover(function(){
+                $('.wrapper').addClass('background5');
+            });
+            $('.snow').hover(function(){
+                $('.wrapper').addClass('background6');
+            });
+            $('.beach').mouseleave(function(){
+                $('.wrapper').removeClass('background1');
+            });
+            $('.planet').mouseleave(function(){
+                $('.wrapper').removeClass('background2');
+            });
+            $('.dojo').mouseleave(function(){
+                $('.wrapper').removeClass('background3');
+            });
+            $('.forest').mouseleave(function(){
+                $('.wrapper').removeClass('background4');
+            });
+            $('.matrix').mouseleave(function(){
+                $('.wrapper').removeClass('background5');
+            });
+            $('.snow').mouseleave(function(){
+                $('.wrapper').removeClass('background6');
+            });
+            $('input').click(function(){
+                $('div.everything').replaceWith('<div class="select-player"><h2>Select Player</h2><div class="player-row"><select name= "Select Ninja"><option class ="choose-leonardo" value="Leonardo" label= "Leonardo"></option><option class ="choose-raphael" value="raphael" label= "Raphael"></option></select><select name= "Select Ninja"><option class ="choose-donatello" value="donatello" label= "Donatello"></option><option class ="mikey" value="mikey" label= "Mikey"></option></select></div></div>');
+            });
+        });
+    </script>
+</head>
+    <body>
+        <div class="wrapper">
+            <div class="everything">
+                <h2>Select Arena</h2>
+                <div class="row">
+                    <input class="beach" type="submit" name="beach" value="beach">
+                    <input class="planet" type="submit" name="planet" value="planet">
+                    <input class="dojo" type="submit" name="dojo" value="dojo">
+                </div>
+                <div class="row">
+                    <input class="forest" type="submit" name="forest" value="forest">
+                    <input class="matrix" type="submit" name="matrix" value="matrix">
+                    <input class="snow" type="submit" name="snow" value="snow">
+                </div>
+            </div>
+            <div class="turtles">
+                <div class="ninjaLeft">
+                </div>
+                <div class="ninjaRight">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

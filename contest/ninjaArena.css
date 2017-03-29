@@ -1,0 +1,76 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    border: 5px grey solid;
+    padding: 100px 200px 0px 200px;
+    background-color: black;
+    width: 1000px;
+    margin: 0px auto;
+}
+.everything{
+    width: 245px;
+    height: 160px;
+    border: 5px darkgray solid;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 0px auto;
+}
+h2{
+    color: orange;
+    height: 50px;
+    text-align: center;
+    margin-top: 15px;
+}
+input{
+    width: 60px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: lightgrey;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+.background1{
+    background-image: url("beach.jpg");
+}
+.background2{
+    background-image: url("earth.jpg");
+}
+.background3{
+    background-image: url("dojo.jpg");
+}
+.background4{
+    background-image: url("forest.jpg");
+}
+.background5{
+    background-image: url("matrix.jpg");
+}
+.background6{
+    background-image: url("snow.jpg");
+}
+.select-player{
+    width: 245px;
+    height: 160px;
+    border: 5px darkgray solid;
+    background-color: rgba(192, 192, 192, 0.5);
+    border-radius: 5px;
+    margin: 0px auto;
+}
+.player-row{
+    display: flex;
+    justify-content: space-around;
+}
+.ninjaLeft{
+    height: 300px;
+}
+.ninjaRight{
+    height: 300px;
+}
+.turtles{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}

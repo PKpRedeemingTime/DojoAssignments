@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Users</title>
+        <meta charset='UTF-8'>
+        <link href='users.css' rel='stylesheet'>
+        <script type='text/javascript' src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                $('.add-user').click(function(){
+                    var userData = $('form').serializeArray();
+                    jQuery.each(userData, function(i, field) {
+                        $(".question").append(`'<td> ${field.value + " "}</td>'`);
+                        });
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <table class="question">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact #</th>
+                </tr>
+            </table>
+            <div class="user-interface">
+                <h1>Add User</h1>
+                <form>
+                    <div class="category">
+                        <label for="first-name">First Name:</label>
+                        <input class="input-box" id="first-name" type="text" name="first-name" placeholder="First Name">
+                    </div>
+                        <div class="category">
+                        <label for="last-name">Last Name:</label>
+                    <input class="input-box" type="text" id="last-name" name="last-name" placeholder="Last Name">
+                    </div>
+                        <div class="category">
+                        <label for="email-address">Email Address:</label>
+                    <input class="input-box" type="text" id="email-address" name="email-address" placeholder="Email Address">
+                    </div>
+                    <div class="category">
+                        <label for="contact-number">Contact #:</label>
+                        <input class="input-box" type="text" id="contact-number" name="contact-number" placeholder="Contact #">
+                    </div>
+                    <input class="add-user" type="button" name="add-user" value="Add User">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
