@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Contact Card</title>
+        <meta charset='UTF-8'>
+        <link href='contactCard.css' rel='stylesheet'>
+        <script type='text/javascript' src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                $('form').submit(function(){
+                    var firstName = $('#first-name').val();
+                    var lastName = $('#last-name').val();
+                    $('.right-side').append(`<div class="output"><p>${firstName} ${lastName}</p><p>Click for description!</p></div>`);
+                    return false;
+                })
+                $(document).on('click', '.output', function(){
+                    var descrip = $('#descrip-text').val();
+                    $(this).replaceWith(`<div class="output"><p>${descrip}</p></div>`);
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="input">
+                <form>
+                    <div class="category">
+                        <label for="first-name">First name:</label>
+                        <input class="names" id="first-name" type="text" name="first_name">
+                    </div>
+                    <div class="category">
+                        <label for="last-name">Last name:</label>
+                        <input class="names" id="last-name" type="text" name="last_name">
+                    </div>
+                    <label class="description-title" for="descrip-text">Description:</label>
+                    <input id="descrip-text" class="description" type="text" name="description" placeholder="Enter description">
+                    <input id="add-user" type="submit" name="add_user" value="Add User">
+                </form>
+                
+            </div>
+            <div class="right-side">
+                
+            </div>
+        </div>
+
+    </body>
+</html>

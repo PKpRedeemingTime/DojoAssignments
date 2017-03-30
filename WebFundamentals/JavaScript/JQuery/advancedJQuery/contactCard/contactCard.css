@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /*outline: 1px red dashed;*/
+}
+.wrapper{
+    margin: 0px auto;
+    width: 700px;
+    padding: 10px 10px 30px 10px;
+    display: flex;
+    border: 5px black solid;
+    display: flex;
+    justify-content: space-between;
+    height: 210px;
+}
+.description{
+    display: block;
+    height: 50px;
+    width: 260px;
+    margin-top: 15px;
+}
+#add-user{
+    display: block;
+    margin-top: 15px;
+}
+.names{
+    height: 20px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+.description-title{
+
+}
+.output{
+    display: block;
+    height: 50px;
+    width: 260px;
+    margin-top: 10px;
+    border: 1px black solid;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+p{
+    margin-top: 5px;
+}
