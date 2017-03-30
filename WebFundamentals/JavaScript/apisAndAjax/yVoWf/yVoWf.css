@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    margin: 0px auto;
+    width: 1000px;
+    padding: 20px;
+}
+.text-area{
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    padding: 5px;
+}
+.bttn{
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 15px;
+    height: 40px;
+    width: 200px;
+}
+.results{
+    height: 500px;
+}
+h1{
+    font-size: 100px;
+    margin-top: 50px;
+}
+p{
+    font-size: 35px;
+    margin-top: 50px;
+}
