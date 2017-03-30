@@ -11,11 +11,14 @@
                     var firstName = $('#first-name').val();
                     var lastName = $('#last-name').val();
                     $('.right-side').append(`<div class="output"><p>${firstName} ${lastName}</p><p>Click for description!</p></div>`);
+                    $('#first-name').val('');
+                    $('#last-name').val('');
                     return false;
                 })
                 $(document).on('click', '.output', function(){
                     var descrip = $('#descrip-text').val();
                     $(this).replaceWith(`<div class="output"><p>${descrip}</p></div>`);
+                    // $('#descrip-text').val('');
                 })
             });
         </script>

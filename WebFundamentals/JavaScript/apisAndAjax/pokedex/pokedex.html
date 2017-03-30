@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+    <title>Pokemon</title>
+    <meta charset='UTF-8'>
+    <link href='pokedex.css' rel='stylesheet'>
+    <script type='text/javascript' src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type='text/javascript'>
+        $(document).ready(function(){
+            $(document).ready(function(){
+                for(var i = 1; i < 719; i++) {
+                    $('.row').append(`<img id ="${i}"src="http://pokeapi.co/media/img/${i}.png">`);
+                };
+            });
+            $(function() {
+                    var info = $('.right');
+                    var infoHomeY = info.offset().top;
+                    var isFixed = false;
+                    var $w = $(window);
+                    $w.scroll(function() {
+                        var scrollTop = $w.scrollTop();
+                        var shouldBeFixed = scrollTop > infoHomeY;
+                        if (shouldBeFixed && !isFixed) {
+                            info.css({
+                                position: 'fixed',
+                                top: 0,
+                                left: info.offset().left,
+                                width: info.width()
+                            });
+                            isFixed = true;
+                        }
+                        else if (!shouldBeFixed && isFixed)
+                        {
+                            info.css({
+                                position: 'static'
+                            });
+                            isFixed = false;
+                        }
+                    });
+            });
+            $(document).on('click', 'img', function(){
+                $.get(`http://pokeapi.co/api/v1/pokemon/${$(this).attr('id')}`, function(res){
+                $('.right').html(`<h1>${res.name}</h1><img src="http://pokeapi.co/media/img/${res.national_id}.png"><h3 class="types-p">Types:</h3><ul><li>${res.types[0].name}</li></ul><h3>Height:</h3><p>${res.height}</p><h3>Weight:</h3><p>${res.weight}`);
+                var typesArr = [];
+                for(var x = 0; x < res.types.length; x++) {
+                    typesArr[x] = res.types[x].name;
+                    console.log(typesArr[x]);
+                }
+                if(typesArr.length>1) {
+                    $('li').append(`<li>${res.types[1].name}</li>`);
+                }
+                console.log(res);
+            }, "json");
+            });
+        });
+    </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="left">
+                <div class="row">
+                
+            </div>  
+            </div>
+            <div class="right">
+                
+            </div>      
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    margin: 0px auto;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.right{
+    border: 10px red solid;
+    height: 400px;
+    width: 250px;
+    
+}
+.left{
+    width: 700px;
+}
+ul{
+    list-style: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+h3{
+    text-align: center;
+    margin-bottom: 5px;
+}
+p, h1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.right img{
+    position: relative;
+    left: 70px;
+}
