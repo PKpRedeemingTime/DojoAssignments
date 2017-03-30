@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /*outline: 1px red dashed;*/
+}
+.wrapper{
+    margin: 0px auto;
+    width: 1000px;
+    padding: 40px;
+}
+.houses{
+    display: flex;
+    justify-content: space-between;
+    height: 128px;
+}
+.content{
+    border: 1px black solid;
+    height: 250px;
+    width: 500px;
+    margin-left: 715px;
+    margin-top: 50px;
+}
+h4{
+    margin-bottom: 30px;
+    margin-left: 20px;
+    /*position: relative;
+    bottom: 9px;
+    left: 20px;*/
+
+}
+p{
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+.inline{
+    
+}

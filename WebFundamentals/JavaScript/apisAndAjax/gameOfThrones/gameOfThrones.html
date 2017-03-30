@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Game of Thrones</title>
+        <meta charset='UTF-8'>
+        <link href='gameOfThrones.css' rel='stylesheet'>
+        <script type='text/javascript' src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                $(document).on('click', 'img', function(){
+                    $.get(`http://anapioficeandfire.com/api/houses/${$(this).attr('class')}`, function(res){
+                        $('.good-stuff').html(`<p>Name: ${res.name}</p><p>Words: ${res.words}</p><p>Titles: ${res.titles}`);
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="houses">
+                <img class="362" src="stark.jpg" alt="House Stark Logo" width="225">
+                <img class="378" src="targaryen.jpg" alt="House Targaryen Logo" width="225">
+                <img class="229" src="lannister.jpg" alt="House Lannister Logo" height="128" width="225">
+                <img class="17" src="baratheon.png" alt="House Baratheon Logo" width="225">
+            </div>
+        </div>
+        <div class="content">
+            <h4>House Details</h4>
+            <div class="good-stuff">
+                
+            </div>
+            
+        </div>
+    </body>
+</html>
