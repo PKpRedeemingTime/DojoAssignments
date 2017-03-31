@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.row{
+    clear: both;
+}
+@media only screen and (max-width: 480px) {
+    .mobile {width: 100%}
+}
+@media only screen and (min-width: 481px) {
+    .tablet1 {width: 33.333333%}
+    .tablet2 {width: 100%}
+}
+@media only screen and (min-width: 1024px) {
+    .desktop {width: 25%}
+    input {width: 100%}
+}
+@media only screen and (max-width: 1023px) {
+    .nav-bar {display: none}
+}
+.column{
+    float: left;
+}
+.nav-bar{
+    float: left;
+    margin-bottom: 10px;
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+input{
+    color: #8a58a0;
+    text-decoration: underline;
+    margin-left: .1875em;
+}
+.header{
+    background-color: #dddddd;
+    margin-bottom: 10px;
+}
+.wrapper{
+    margin: 0px auto;
+    width: 90%;
+}
