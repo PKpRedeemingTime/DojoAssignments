@@ -1,0 +1,36 @@
+I used the command "pip install Django" to install Django
+
+I used the command "pip list" to list the installed packages. It returned the following information:
+	$ pip list
+	DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+	click (6.7)
+	Django (1.10.6)
+	Flask (0.12.1)
+	itsdangerous (0.24)
+	Jinja2 (2.9.5)
+	MarkupSafe (1.0)
+	pip (9.0.1)
+	setuptools (16.0)
+	Werkzeug (0.12.1)
+
+I entered "pip install Django" and thefollowing was returned:
+	Requirement already satisfied: Django in c:\python27\lib\site-packages
+
+I entered "pip freeze" and thefollowing was returned. pip freeze returns installed packages in requirements format. If there were a required update to a package it would list the required version.
+	$ pip freeze
+	click==6.7
+	Django==1.10.6
+	Flask==0.12.1
+	itsdangerous==0.24
+	Jinja2==2.9.5
+	MarkupSafe==1.0
+	Werkzeug==0.12.1
+
+I entered "pip freeze >requirements.txt" and nothing happened.
+
+I entered "pip uninstall Django" and a lot of data was returned. The program froze and I eventually closed it out.
+
+I entered "pip shop Django" and it returned the version information. I assume if the previous command had worked properly Django would have been uninstalled and when I entered "show Django" it would have indicated Django was not installed.
+
+I entered "pip search Flask" and it returned A LOT of information.
+
