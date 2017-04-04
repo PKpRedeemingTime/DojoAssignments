@@ -5,8 +5,8 @@ students = [
      {'first_name' : 'KB', 'last_name' : 'Tonel'}
 ]
 
-for value in students:
-    print value['first_name'],value['last_name']
+for val in students:
+    print val['first_name'],val['last_name']
 
 users = {
  'Students': [
@@ -21,7 +21,13 @@ users = {
   ]
  }
 
-for value in users:
-    x = 1
-    print x,'-',value['first_name'],value['last_name'],'-'
+x = 1
+print "Students"
+for val in users['Students']:
+    print x,"-",val['first_name'],val['last_name'],"-",(len(val['first_name']) + len(val['last_name']))
+    x += 1
+x = 1
+print "Instructors"
+for val in users['Instructors']:
+    print x,"-",val['first_name'],val['last_name'],"-",(len(val['first_name']) + len(val['last_name']))
     x += 1
