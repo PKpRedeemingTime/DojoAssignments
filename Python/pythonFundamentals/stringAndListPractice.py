@@ -1,21 +1,25 @@
-#Find and replace
-str = "It's Thanksgiving Day. It's also my birthday"
-print(str.index("day"))
-str.replace("day", "month")
+Find and replace
+def findAndReplace():
+    sentence = "It's Thanksgiving day. It's also my birthday"
+    sentence2 = sentence.replace("day", "month")
+    print sentence2
+findAndReplace()
 
-#Min and Man
-x = [2,54,-2,7,12,98]
-print(min(x))
-print(max(x))
+def minMax(arr):
+    x = [2,54,-2,7,12,98]
+    print(min(x))
+    print(max(x))
+minMax([2,54,-2,7,12,98])
 
-#First and Last
-x = ["hello",2,54,-2,7,12,98,"world"]
-print x[0]
-print x[-1]
+def fAl(arr):
+    print arr[0]
+    print arr[-1]
+fAl(['hello',2,54,-2,7,12,98,'world'])
 
-#New List
-x = [19,2,54,-2,7,12,98,32,10,-3,6]
-x.sort()
-newArr = x[0:lex(x)/2]
-del x[0:len(x)/2]
-x.insert(0,newArr)
+def nL(arr):
+    arr.sort()
+    newArr = arr[0:len(arr)/2]
+    del arr[0:len(arr)/2]
+    arr.insert(0,newArr)
+    print arr
+nL([19,2,54,-2,7,12,98,32,10,-3,6])
