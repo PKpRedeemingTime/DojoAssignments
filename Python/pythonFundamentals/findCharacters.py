@@ -2,7 +2,7 @@ def findCharacters(arr):
     count = 0
     newArr = []
     while count < len(arr):
-        if arr[count].find('o') == 1:
+        if arr[count].find('o') >= 0:
             newArr.append(arr[count])
         count += 1
     print newArr
