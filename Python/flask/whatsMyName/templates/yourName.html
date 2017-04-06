@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'>
+        <link type='text/css' href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <p class='what'>Your Name:</p>
+        <form action='/process' method='post'>
+            <input type="text" name="name" value="">
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>
