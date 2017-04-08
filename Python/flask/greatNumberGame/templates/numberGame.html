@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>The Great Number Game</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+    <h3>Welcome to the Great Number Game!</h3>
+    <p>I am thinking of a number between 1 and 100...</p>
+    <p>Take a guess!</p>
+    <p>{{ session['myNumber'] }}</p>
+    <p>{{ session['guess'] }}</p>
+    <form action= '/' method='post'>
+        <input type="hidden" name="action" value="hidden">
+        <input type="number" name="guess" value="">
+        <input type="submit" value="Submit">
+    </form>
+    {% if "guess" in session %}
+        {% if session['guess'] > session['myNumber'] %}
+            <h1>Your guess was too high!</h1>
+            <h3>Try again...</h3>
+        {% endif %}
+        {% if session['guess'] < session['myNumber'] %}
+            <h1>Your guess was too low!</h1>
+            <h3>Try again...</h3>
+        {% endif %}
+        {% if session['guess'] == session['myNumber'] %}
+            <h1>Got it!</h1>
+            <h3>Play again?</h3>
+            <form action= '/' method='post'>
+                <input type="hidden" name="action" value="playAgain">
+                <input type="submit" name="playAgain" value="Play Again">
+            </form>
+        {% endif %}
+    {% endif %}
+    </body>
+</html>
