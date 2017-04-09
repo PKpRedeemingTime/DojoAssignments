@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Dojo Survey With Validations</title>
+        <meta charset='UTF-8'>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dojoSurvey.css') }}">
+    </head>
+    <body>
+        <div class="wrapper">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <form action='/result'method='post'>
+                <label for="name">Your name:</label>
+                <input type="text" name="name" placeholder="First and Last Name">
+                <label for="location">Dojo Location</label>
+                <select name='location'>
+                    location: <option value='Silicon Valley'>Silicon Valley</option>
+                    location: <option value='Seattle'>Seattle</option>
+                    location: <option value='Los Angeles'>Los Angeles</option>
+                    location: <option value='Dallas'>Dallas</option>
+                    location: <option value='Washington DC'>Washington DC</option>
+                    location: <option value='Chicago'>Chicago</option>
+                    location: <option value='Berkeley'>Berkeley</option>
+                    location: <option value='Orange County'>Orange County</option>
+                </select>
+                <select name='language'>
+                    language: <option value='Java'>Java</option>
+                    language: <option value='Python'>Python</option>
+                    language: <option value='Ruby'>Ruby</option>
+                    language: <option value='PhP'>PhP</option>
+                </select>
+                <label for="comment">Comment (optional):</label>
+                <input type="text" name="comment" value="">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
