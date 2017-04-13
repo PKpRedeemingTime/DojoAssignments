@@ -1,0 +1,39 @@
+select * from clients
+
+select first_name from clients
+
+select amount from billing
+
+order by amount desc
+
+select concat('Mr. ', ' ', first_name, ' ', last_name) as mailing_name from leads
+
+order by last_name asc
+
+select first_name, last_name, registered_datetime from leads
+
+order by registered_datetime desc
+
+select clients.last_name, billing.amount
+
+from clients
+
+join billing on clients.id = billing.clients_id
+
+order by billing.amount desc
+
+select clients.last_name, billing.amount
+
+from clients
+
+left join billing on clients.id = billing.clients_id
+
+order by billing.amount desc
+
+select clients.last_name, sum(billing.amount)
+
+from clients
+
+join billing on clients.id = billing.clients_id
+
+group by clients.id

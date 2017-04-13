@@ -1,0 +1,17 @@
+1)
+
+
+ (This error was created because the host name was wrong
+
+2)
+File "server.py", line 4, in <module>
+    mysql = MySQLConnector(app, 'friends')
+  File "C:\Users\redee\Desktop\DojoAssignments\Python\flaskSQL\flask_mysql\frien
+ds\mysqlconnection.py", line 28, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "C:\Users\redee\Desktop\DojoAssignments\Python\flaskSQL\flask_mysql\frien
+ds\mysqlconnection.py", line 8, in __init__
+    'database': rb,
+NameError: global name 'rb' is not defined
+
+(This error was created because the database name was wrong)

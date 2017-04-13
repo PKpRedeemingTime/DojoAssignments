@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Success!</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        <p>The email address you entered {{ email }} is a VALID email address! Thank you!</p>
+        <h3>Email Addresses Entered:</h3>
+        {% for x in all_friends %}
+            <p>{{ x['email'] }}, {{ x['created_at'] }}</p>
+        {% endfor %}
+    </body>
+</html>

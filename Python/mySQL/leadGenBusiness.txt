@@ -1,0 +1,54 @@
+1)
+select sum(amount) from billing
+
+where charged_datetime like "2012-03%"
+
+2)
+select sum(billing.amount)
+
+from clients
+
+join billing on clients.client_id = billing.client_id
+
+where clients.client_id = 2
+
+3)
+select sites.domain_name
+
+from clients
+
+join sites on clients.client_id = sites.client_id
+
+where clients.client_id = 10
+
+4)
+select clients.client_id, count(sites.domain_name) as websites, MONTHNAME(sites.created_datetime) as month, YEAR(sites.created_datetime) as year
+
+from clients
+
+join sites on clients.client_id = sites.client_id
+
+where clients.client_id = 1
+
+group by sites.created_datetime
+
+select clients.client_id, count(sites.domain_name) as websites, MONTHNAME(sites.created_datetime) as month, YEAR(sites.created_datetime) as year
+
+from clients
+
+join sites on clients.client_id = sites.client_id
+
+where clients.client_id = 20
+group by sites.created_datetime
+
+5)
+select sites.domain_name as website, count(leads.leads_id) as number_of_leads, date_format(leads.registered_datetime, '%M %d, %Y') as date_generated
+
+from sites
+
+join leads on sites.site_id = leads.site_id
+
+where leads.registered_datetime between '2010-12-31' and '2011-02-16'
+
+group by leads.registered_datetime
+
