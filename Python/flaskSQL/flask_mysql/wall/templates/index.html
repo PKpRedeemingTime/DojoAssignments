@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Login/Register</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h1>Please Login or Register</h1>
+        <fieldset>
+            <legend>Login:</legend>
+            <form action='/login' method='post'>
+                <input type="text" name="client_email" placeholder="Email Address">
+                <input type="password" name="client_password" placeholder="Password">
+                <input type="submit" name="submit" value="Login">
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Register:</legend>
+            <form action='/register' method='post'>
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="text" name="email" placeholder="Email Address">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="confirm_password"  placeholder="Confirm Password">
+                <input type="submit" name="submit" value="Register">
+            </form>
+        </fieldset>
+    </body>
+</html>

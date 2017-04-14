@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>The Wall</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        <h1>Coding Dojo Wall - Welcome {{ session['logged_name'] }}!</h1>
+        <hr>
+        <h2>Post a message:</h2>
+        <form action="/message", method='POST'>
+            <textarea name="message" rows="4" cols="100"></textarea>
+            <input type="submit" name="submit" value="Post">
+        </form>
+        {% for message in messages %}
+        <hr>
+        <h3>Post:</h3>
+		<p>{{  message.message }}</p>
+		<p>posted by:{{message.first_name}} {{ message.last_name}}</p>
+            <hr>
+            
+            <h4>Comments:</h4>
+            {% for comment in comments %}
+                {% if comment.message_id == message.id %}
+                <p>{{  comment.comment }}</p>
+                <p>posted by:{{comment.first_name}} {{ comment.last_name}}</p>
+                {% endif %}
+            {% endfor %}
+		<form action="/message/{{message.id}}/comment" method="POST">
+			<textarea name="comment" value="{{message.id}}"></textarea>
+			<input type="submit" name="">
+		</form>
+	    {% endfor %}    
+    </body>
+</html>
