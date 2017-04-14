@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <script type='text/javascript' src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type='text/javascript'>
+    
+    </script>
+    </head>
+    <body style="margin: 0px, auto; width: 1000px; text-align:center;">
+        <fieldset style="width:200px;">
+            <p>The current time and date:</p>
+        </fieldset>
+        <fieldset style="width:600px;">
+            <p id="date"></p>
+            <script>
+                n =  new Date();
+                y = n.getFullYear();
+                m = n.getMonth() + 1;
+                d = n.getDate();
+                document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+            </script>
+            <p id="time"></p>
+            <script>
+                t =  new Date();
+                h = t.getHours();
+                q = t.getMinutes();
+                document.getElementById("time").innerHTML = h + ":" + q;
+            </script>
+        </fieldset>
+    </body>
+</html>     

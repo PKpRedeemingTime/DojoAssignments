@@ -5,6 +5,12 @@
     <meta charset='UTF-8'>
     </head>
     <body>
+        {{ request.session.name }}
         <h1>Welcome to my portfolio!</h1>
+        <form action="/new_user" method='POST'>
+            {% csrf_token %}
+            <input type="text" name="first_name">
+            <input type="submit" value="Submit">
+        </form>
     </body>
 </html>
