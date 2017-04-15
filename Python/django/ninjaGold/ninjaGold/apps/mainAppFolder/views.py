@@ -30,7 +30,7 @@ def process_money(request):
         if request.session['goldTry'] >= 0:
             request.session['earnedLost'] = "Earned "
             request.session['where'] = " golds from the casino!"
-        else:
+        elif request.session['goldTry'] < 0:
             request.session['earnedLost'] = "Lost "
             request.session['where'] = " golds from the casino!"
         return redirect('/')
