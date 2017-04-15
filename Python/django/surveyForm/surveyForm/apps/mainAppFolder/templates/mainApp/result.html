@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+    <title>Submitted Info</title>
+    <meta charset='UTF-8'>
+    </head>
+    <body>
+        <div style="margin: 0px, auto; width: 500px; justify-content:center;">
+            <fieldset style="background-color:#b6d7a8; width: 300px;">
+                <p>Thank you for submitting this form! You have submitted this form {{ request.session.count }} times now!</p>
+            </fieldset>
+            <fieldset style="width: 300px;"">
+                <h4 style="text-decoration:underline;">Submitted Information:</h4>
+                <p>Name: {{ request.session.name }}</p>
+                <p>Dojo Location: {{ request.session.location }}</p>
+                <p>Favorite Language: {{ request.session.language }}</p>
+                <p>Comment: {{ request.session.comment }}</p>
+                <form action='/' method='get']>
+                    {% csrf_token %}
+                    <input type="submit" name="submit" value="Go Back">
+                </form>
+            </fieldset>
+        </div>
+    </body>
+</html>

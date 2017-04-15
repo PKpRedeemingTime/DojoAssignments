@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Ninja Gold</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        <h4>Your Gold: ${{ request.session.gold }}</h4>
+        <div style="margin: 0px, auto; width: 1000px; display: flex; justify-content: space-around;">
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/process_money' method='post'>
+                {% csrf_token %}
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <input type="hidden" name="action" value="farm">
+                <input type="submit" name="farm" value="Find Gold!">
+                </form>
+            </fieldset>
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/process_money' method='post'>
+                {% csrf_token %}
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <input type="hidden" name="action" value="cave">
+                <input type="submit" name="cave" value="Find Gold!">
+                </form>
+            </fieldset>
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/process_money' method='post'>
+                {% csrf_token %}
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <input type="hidden" name="action" value="house">
+                <input type="submit" name="house" value="Find Gold!">
+                </form>
+            </fieldset>
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/process_money' method='post'>
+                {% csrf_token %}
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <input type="hidden" name="action" value="casino">
+                <input type="submit" name="casino" value="Find Gold!">
+                </form>
+            </fieldset>
+        </div>
+        <h5>Activities:</h5>
+        <fieldset  style="width: 960px; height:auto;color:green;">
+            {% if request.session.goldTry < 0 %}
+                <style>
+                    .color{
+                        color:red;
+                    }
+                </style>
+            {% endif %}
+                <p class="color">{{ request.session.earnedLost }}{{ request.session.goldTry }}{{ request.session.where }}</p>
+        </fieldset>
+    </body>
+</html>

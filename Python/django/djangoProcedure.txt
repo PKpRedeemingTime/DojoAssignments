@@ -1,0 +1,38 @@
+django-admin startproject "name_of_project"
+cd "n_o_p"
+mkdir apps
+cd apps
+touch __init__.py
+python ../manage.py startapp mainAppFolder
+cd -> main/settings.py
+add "apps.mainAppFolder" to INSTALLED-APPS
+cd -> main/urls.py
+add "include" to imports list
+change urlpatterns to url(r'^', include('apps.mainAppFolder.urls'))
+cd mainAppFolder
+touch urls.py
+code urls.py
+from django.conf.urls import url
+from . import views
+urlpatterns = [
+	url(r'^$', views.index)
+]
+code views.py
+from __future__ import unicode_literals
+from django.shortcuts import render, HttpResponse
+def index(request):
+    return render(request, "index.html")
+mkdir templates
+cd templates
+mkdir mainApp
+cd to mainApp
+touch index.html
+code index.html
+write your html code
+mkdir static
+cd static
+mkdir mainApp
+cd mainApp
+mkdir css images javaScript
+
+
