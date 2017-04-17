@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>What a beautiful landscape!</title>
+        <meta charset='UTF-8'>
+        {% load staticfiles %}
+    </head>
+    <body>
+        {% if number > 0 and number < 11 %}
+        <h1>Snowy!</h1>
+        <img src="{% static 'mainApp/images/snowy-landscape.jpg' %}" alt="">
+        {% elif number > 10 and number < 21 %}
+        <h1>Deserty!</h1>
+        <img src="{% static 'mainApp/images/desert-landscape.jpg' %}" alt="">
+        {% elif number > 20 and number < 31 %}
+        <h1>Foresty!</h1>
+        <img src="{% static 'mainApp/images/forest-landscape.jpg' %}" alt="">
+        {% elif number > 30 and number < 41 %}
+        <h1>Vineyardy!</h1>
+        <img src="{% static 'mainApp/images/vineyard-landscape.jpg' %}" alt="">
+        {% elif number > 40 and number < 51 %}
+        <h1>Tropically!</h1>
+        <img src="{% static 'mainApp/images/tropical-landscape.jpg' %}" alt="april">
+        {% endif %}  
+    </body>
+</html>

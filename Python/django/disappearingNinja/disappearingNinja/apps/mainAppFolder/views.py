@@ -6,7 +6,6 @@ def index(response):
 
 def ninjas(request):
     request.session['check'] = "true"
-    print request.session['check']
     return render(request, 'mainApp/ninja.html')
 
 def ninjasColor(request, color):
