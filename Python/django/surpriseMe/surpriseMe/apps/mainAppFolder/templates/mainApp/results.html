@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Disappearing Ninja</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        <h1>Surprises: </h1>
+        <fieldset style="width:100px"> 
+            {% for count in values %}
+                <p>Item {{count}}</p>
+            {% endfor %}
+        </fieldset>
+    </body>
+</html>

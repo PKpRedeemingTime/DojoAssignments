@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Surprise Me!</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+    <h1>Surprise Me!</h1>
+    <p>Pick a number between 1 and 8...</p>
+    <form action='/results' method='post'>
+        {% csrf_token %}
+        <label for="number">Pick a number: <input type="text" name="number"></label>
+        <input type="submit" name="submit" value="Ready!">
+    </form>  
+    </body>
+</html>
