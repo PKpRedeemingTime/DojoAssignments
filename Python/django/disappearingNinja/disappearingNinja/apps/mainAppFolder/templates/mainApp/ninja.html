@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Ninjas!</title>
+        <meta charset='UTF-8'>
+        {% load staticfiles %}
+    </head>
+    <body>
+        {% if request.session.check == "true" %}
+        <img src="{% static 'mainApp/images/tmnt.png' %}" alt="">
+        {% elif color == "blue" %}
+        <h1>Leonardo!</h1>
+        <img src="{% static 'mainApp/images/leonardo.jpg' %}" alt="">
+        <h1>Raphael!</h1>
+        {% elif color == "red" %}
+        <h1>Raphael!</h1>
+        <img src="{% static 'mainApp/images/raphael.jpg' %}" alt="">
+        {% elif color == "orange" %}
+        <h1>Michelangelo!</h1>
+        <img src="{% static 'mainApp/images/michelangelo.jpg' %}" alt="">
+        {% elif color == "purple" %}
+        <h1>Donatello!</h1>
+        <img src="{% static 'mainApp/images/donatello.jpg' %}" alt="">
+        {% else %}
+        <h1>You're not April! This is April!</h1>
+        <img src="{% static 'mainApp/images/notapril.jpg' %}" alt="april">
+        {% endif %}  
+    </body>
+</html>
