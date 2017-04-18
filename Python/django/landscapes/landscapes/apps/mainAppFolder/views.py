@@ -8,8 +8,4 @@ def landscapeNumber(request, number):
     context = {
         "number" : int(number)
     }
-    print "*"*75
-    print number
-    print context
-    print "*"*75
     return render(request, 'mainApp/landscapes.html', context)
