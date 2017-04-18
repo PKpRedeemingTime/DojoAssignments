@@ -6,7 +6,7 @@ touch __init__.py
 python ../manage.py startapp mainAppFolder
 cd -> main/settings.py
 add "apps.mainAppFolder" to INSTALLED-APPS
-cd -> main/urls.py
+code urls.py
 add "include" to imports list
 change urlpatterns to url(r'^', include('apps.mainAppFolder.urls'))
 cd mainAppFolder
