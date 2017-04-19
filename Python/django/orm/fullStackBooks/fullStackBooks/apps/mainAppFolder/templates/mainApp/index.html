@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body style="">
+        <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+        </tr>
+        {% for book in books %}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.category}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <h1>Add a Book</h1>
+        <form action='/process' method='post'>
+            {% csrf_token %}
+            <label for="title">Title:</label>
+            <input type="text" name="title" value="">
+            <label for="author">Author:</label>
+            <input type="text" name="author" value="">
+            <label for="category">Category:</label>
+            <input type="text" name="category" value="">
+            <input type="submit" name="" value="Add Book!">
+        </form>
+    </body>
+</html>
