@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Success</title>
+        <meta charset='UTF-8'>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'mainApp/css/styles.css' %}"media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <fieldset>
+            <h3>The user name you entered {{user.username}} is valid. Thank you!</h3>
+        </fieldset>
+        <p>Usernames entered:</p>
+        {% for user in users %}
+            <table>
+                <tr>
+                    <td>{{user.username}}</td>
+                    <td>{{user.created_at}}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    </body>
+</html>

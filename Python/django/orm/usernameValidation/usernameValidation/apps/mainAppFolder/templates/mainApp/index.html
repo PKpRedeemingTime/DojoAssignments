@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Validator</title>
+        <meta charset='UTF-8'>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'mainApp/css/styles.css' %}"media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        
+        {{request.session.error}}
+        <form action="/process" method = "post">
+            {% csrf_token %}
+            <label for="username">Username:<input type="text" name="username"></label>
+            <input type="submit" name="" value="Submit">
+        </form>
+    </body>
+</html>
