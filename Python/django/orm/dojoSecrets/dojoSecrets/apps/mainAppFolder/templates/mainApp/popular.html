@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Popular Secrets!</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        <h1 style="display:inline;">Most Popular Secrets...</h1>
+        <a href="{% url 'index' %}">Back</a>
+        {% for secret in secrets %}
+            <p>{{secret.content}} (when the secret was posted)</p>
+        {% endfor %}
+    </body>
+</html>
