@@ -1,0 +1,46 @@
+1)
+"teams": Team.objects.filter(league__name__contains="Atlantic"),
+
+2)
+"players": Player.objects.filter(curr_team="28"),
+
+3)
+"players": Player.objects.filter(curr_team__league__name="International Collegiate Baseball Conference"),
+
+4)
+"players": Player.objects.filter(Q(last_name="Lopez") & Q(curr_team__league__name="American Conference of Amateur Football")),
+
+5)
+"players": Player.objects.filter(curr_team__league__sport="Football"),
+
+6)
+"teams": Team.objects.filter(curr_players__first_name="Sophia"),
+
+7)
+"leagues": League.objects.filter(teams__curr_players__first_name="Sophia"),
+
+8)
+"players": Player.objects.filter(last_name="Flores").exclude(curr_team__team_name="Roughriders"),
+
+9)
+"teams": Team.objects.filter(all_players__first_name="Samuel", all_players__last_name="Evans"),
+
+10)
+"players": Player.objects.filter(all_teams__team_name="Tiger-Cats"),
+
+11)
+"players": Player.objects.filter(all_teams__team_name="Vikings").exclude(curr_team__team_name="Vikings"),
+
+12)
+"teams": Team.objects.filter(all_players__first_name="Jacob", all_players__last_name="Gray").exclude(curr_players__first_name="Jacob", curr_players__last_name="Gray"),
+
+13)
+"players": Player.objects.filter(Q(first_name="Joshua") & Q(all_teams__league__name="Atlantic Federation of Amateur Baseball Players")),
+
+14)
+from django.db.models import Q, Count
+"teams": Team.objects.annotate(num_players=Count("all_players")).filter(num_players__gt=12),
+
+15)
+"players": Player.objects.annotate(num_teams=Count("all_teams")).order_by("num_teams"),
+
