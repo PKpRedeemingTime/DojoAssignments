@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Success!</title>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+        <h4>Welcome, {{name.name}}!</h4>
+        <a href="/add">Add Book and Review</a>
+        <a href="/">Logout</a>
+        <div style="display:inline">
+            <h5>Recent Book Reviews:</h5>
+        <table>
+            {% for review in reviews %}
+            {% endfor %}
+        </table>
+        </div>
+        <div style="display:inline">
+            <h5>Other Books With Reviews:</h5>
+        <table>
+            {% for review in reviews %}
+            {% endfor %}
+        </table>
+        </div>
+    </body>
+</html>

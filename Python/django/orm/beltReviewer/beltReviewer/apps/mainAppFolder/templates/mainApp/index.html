@@ -15,19 +15,19 @@
         {% endif %}
         <fieldset style="display:inline;">
             <legend>Login</legend>
-            <form action="{% url "login" %}", method='POST'>
+            <form action="/login", method='POST'>
             {% csrf_token %}
-            <label style="display:block;" for="client_username">Username: <input type="text" name="client_username" id="client_username"></label>
+            <label style="display:block;" for="client_email">Email Address: <input type="text" name="client_email" id="client_email"></label>
             <label  style="display:block;" for="client_password">Password: <input type="password" name="client_password" id="client_password"></label>
             <input  style="display:block;" type="submit" name="submit" value="Login">
         </form>
         </fieldset>
         <fieldset  style="display:inline;">
             <legend>Register</legend>
-            <form action="{% url "register" %}", method='POST'>
+            <form action="/registration", method='POST'>
             {% csrf_token %}
             <label  style="display:block;" for="name">Name: <input type="text" name="name" id="name"></label>
-            <label  style="display:block;" for="username">Userame: <input type="text" name="username" id="username"></label>
+            <label  style="display:block;" for="alias">Alias: <input type="text" name="alias" id="alias"></label>
             <label  style="display:block;" for="email">Email Address: <input type="text" name="email" id="email"></label>
             <label  style="display:block;" for="password">Password: <input type="password" name="password" id="password"></label>
             <p>*Password should be at least 8 characters</p>
