@@ -15,12 +15,12 @@ source /home/vagrant/.rvm/scripts/rvm
 rvm requirements
 # install Ruby and make 2.3.1 the default
 echo installing ruby
-rvm install 2.3.1
-rvm use 2.3.1 --default
+rvm install 2.4.1
+rvm use 2.4.1--default
 # install Bundler and Rails
 echo installing bundler and rails
 gem install bundler --no-ri --no-rdoc
-gem install rails -v 4.2.7 --no-ri --no-rdoc
+gem install rails -v 5.0.2 --no-ri --no-rdoc
 # install postgres and its dependencies
 echo installing psql and its dependencies
 sudo apt-get install -y postgresql postgresql-contrib libpq-dev

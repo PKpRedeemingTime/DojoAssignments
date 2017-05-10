@@ -12,6 +12,7 @@ class AppleTree
         if @age > 2 and @age < 11
             @apple_count += 2
         end
+        self
     end
     def pick_apples
         @apple_count = 0
