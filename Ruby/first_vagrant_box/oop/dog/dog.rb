@@ -18,7 +18,7 @@ class Dog < Mammal
         self
     end
     def display_health
-        puts "#{@health}"
+        super
         self
     end
 end

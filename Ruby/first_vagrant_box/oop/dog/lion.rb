@@ -19,7 +19,7 @@ class Lion < Mammal
         self
     end
     def display_health
-        puts "This is a lion #{@health}"
+        super
         self
     end
 end
