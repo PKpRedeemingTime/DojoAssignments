@@ -1,0 +1,9 @@
+rails new {{project_name}}
+update Gemfile
+bundle install
+rails generate rails_footnotes:install
+rails generate model {{Name_of_model}} parameter:type(string, integer, datetime) NO COMMAS BETWEEN PARAMETERS
+rake db:migrate
+rails console
+{{instance_name}} = {{Name_of_model}}.new(parameter1: "{{input}}", parameter2: "{{input}}", etc)
+{{instance_name}}.save
