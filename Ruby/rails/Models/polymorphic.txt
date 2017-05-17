@@ -1,0 +1,10 @@
+rails g model Comment comment:text imageable:references{polymorphic}
+rake db:migrate
+rails c
+Comment.create(comment: "First comment", imageable: User.first)
+Comment.create(comment: "Second comment", imageable: Blog.first)
+Comment.create(comment: "Third comment", imageable: Post.first)
+Comment.create(comment: "Fourth comment", imageable: Message.first)
+Comment.first.update(comment: "Updated")
+Comment.second.delete
+

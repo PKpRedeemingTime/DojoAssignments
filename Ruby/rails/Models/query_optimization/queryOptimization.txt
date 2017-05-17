@@ -1,0 +1,24 @@
+1)
+players = Player.all (1)
+players.each do |player|
+	puts player.team.name (451)
+	puts player.team.mascot (451)
+	puts player.team.stadium (451)
+end
+
+2)
+players = Player.includes(:team)
+players.each do |player|
+  	puts player.team.name (451)
+	puts player.team.mascot (451)
+	puts player.team.stadium (451)
+end
+
+3)
+Player.includes(:team).where("teams.name = 'Chicago Bulls'").references(:team)
+
+4)
+Player.joins(:team).select(:name, "teams.name as Team_Name").where("teams.stadium = 'Staples Center'")
+
+5)
+Team.joins(:players).select(:name, "players.name as Player_Name").where("players.name LIKE '#{"Z%"}'")
