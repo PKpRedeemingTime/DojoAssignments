@@ -1,0 +1,16 @@
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+		<p><%= e %></p>
+	<% end %>
+<% end %>
+<p>CodingDojo Wall | Welcome <%= @user.username %>! | <%= link_to "Log Out", root_path %></p>
+<h2>Post a Message</h2>
+<form action="/messages" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<textarea name="message[message]" id="message"></textarea>
+	<input type="submit" value="Post a Message">
+</form>
+<% @messages.each do |message| %>
+	<h2><%= message.user.username %></h2>
+	<p><%= message.message %></p>
+<% end %>

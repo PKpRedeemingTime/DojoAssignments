@@ -1,0 +1,28 @@
+<h3 style="color:red"><%= flash[:notice] %></h3>
+<h1 style="display:inline"><%= @dojo.branch %> </h1>
+<p style="display:inline"> <%= link_to "Edit", edit_dojo_path(@dojo) %></p>
+<h3>Address: <%= @dojo.street %></h3>
+<h3>City: <%= @dojo.city %> - State: <%= @dojo.state %></h3>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>email</th>
+        <th>Actions</th>
+	</thead>
+	<tbody>
+		<% @student.each do |student| %>
+		<tr>
+			<td><%= student.first_name %></td>
+			<td><%= student.last_name %></td>
+			<td><%= student.email %></td>
+            <td style="display:block;" >
+				<%= link_to "Show", dojo_student_path(@dojo, student) %> |
+				<%= link_to "Edit", edit_dojo_student_path(@dojo, student) %> |
+				<%= link_to "Delete", dojo_student_path(@dojo, student), data: { method: :delete, confirm: "Are you sure?" } %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<p><%= link_to "Home", root_path %> | <%= link_to "Add Student", new_dojo_student_path(@dojo) %></p>

@@ -1,0 +1,52 @@
+<body>
+        <h4>Your Gold: <%= @gold %></h4>
+        <div style="margin: 0px, auto; width: 1000px; display: flex; justify-content: space-around;">
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/rpg/gold_process/' method='post'>
+                    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                    <input type="hidden" name="setting" value="farm">
+                    <h3>Farm</h3>
+                    <p>(earns 10-20 golds)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </fieldset>
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/rpg/gold_process/' method='post'>
+                    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                    <input type="hidden" name="setting" value="cave">
+                    <h3>Cave</h3>
+                    <p>(earns 5-10 golds)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </fieldset>
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/rpg/gold_process/' method='post'>
+                    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                    <input type="hidden" name="setting" value="house">
+                    <h3>House</h3>
+                    <p>(earns 2-5 golds)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </fieldset>
+            <fieldset style="width: 200px; text-align:center;">
+                <form action= '/rpg/gold_process/' method='post'>
+                    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                    <input type="hidden" name="setting" value="casino">
+                    <h3>Casino</h3>
+                    <p>(earns/takes 0-50 golds)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </fieldset>
+        </div>
+        <h5>Activities:</h5>
+        <fieldset style="width: 960px">
+            <% @activities.reverse.each do |activity| %>
+                <% if activity.include?("Earned") %>
+                    <p style"color:green"><%= activity %></p>
+                <% else %>
+                    <p style"color:red"><%= activity %></p>
+                <% end %>
+            <% end %>
+        </fieldset>
+    </body>
+</html>

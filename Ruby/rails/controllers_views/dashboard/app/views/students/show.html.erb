@@ -1,0 +1,21 @@
+<h3 style="color:red"><%= flash[:notice] %></h3>
+<h1><%= @student.branch %>'s <%= @student.first_name %> <%= @student.last_name %></h1>
+<h3>Email: <%= @student.email %></h3>
+<h4>Cohort</h4>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>email</th>
+	</thead>
+	<tbody>
+		<% @cohort.each do |cohort| %>
+		<tr>
+			<td><%= cohort.first_name %></td>
+			<td><%= cohort.last_name %></td>
+			<td><%= cohort.email %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<p><%= link_to "Home", root_path %> | <%= link_to "Edit", edit_dojo_student_path(@student) %></p>

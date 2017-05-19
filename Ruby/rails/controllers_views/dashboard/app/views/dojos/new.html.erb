@@ -1,0 +1,15 @@
+<h1>New Dojo</h1>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+		<h3 style="color:red"><%= e %></h3>
+	<% end %>
+<% end %>
+<form action="/dojos/" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <label style="display:block;" for="branch">Branch: <input type="text" name=dojo[branch] value="<%= @dojo.branch %>"></label>
+    <label style="display:block;" for="street">Street: <input type="text" name=dojo[street] value="<%= @dojo.street %>"></label>
+    <label style="display:block;" for="city">City: <input type="text" name=dojo[city] value="<%= @dojo.city %>"></label>
+    <label style="display:block;" for="state">State: <input type="text" name=dojo[state] value="<%= @dojo.state %>"></label>
+    <input style="display:block;" type="submit" name="submit" value="Submit">
+</form>
+<p><%= link_to "Home", root_path %></p>

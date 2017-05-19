@@ -1,0 +1,25 @@
+<fieldset style="width:250px; padding:20px">
+    <form action="/survey" method="post">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <label style="display:block;" for="name">Your Name: <input type="text" name="survey[name]"></label>
+        <label style="display:block;" for="location">Dojo Location:<select name='survey[location]'>
+            location: <option value='Silicon Valley'>Silicon Valley</option>
+            location: <option value='Seattle'>Seattle</option>
+            location: <option value='Los Angeles'>Los Angeles</option>
+            location: <option value='Dallas'>Dallas</option>
+            location: <option value='Washington DC'>Washington DC</option>
+            location: <option value='Chicago'>Chicago</option>
+            location: <option value='Berkeley'>Berkeley</option>
+            location: <option value='Orange County'>Orange County</option>
+        </select>
+        <label style="display:block;" for="language">Favorite Language:<select name='survey[language]'>
+            language: <option value='Java'>Java</option>
+            language: <option value='Python'>Python</option>
+            language: <option value='Ruby'>Ruby</option>
+            language: <option value='PhP'>PhP</option>
+        </select>
+        <label style="display:block;" for="comment">Comment (optional):</label>
+        <input style="display:block; width: 200px; height:100px;" type="text" name="survey[comment]" value="">
+        <input style="display:block;" type="submit" name="submit" value="Submit">
+    </form>
+</fieldset>
