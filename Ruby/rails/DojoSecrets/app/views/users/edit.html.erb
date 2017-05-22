@@ -1,0 +1,11 @@
+<h1>Hello, <%= @user.name %></h1>
+<h4>Edit your information below...</h4>
+<form action="/users/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <label style="display:block;" for="email">Email: <input type="text" name="user[email]" value="<%= @user.email %>"></label>
+    <label style="display:block;" for="name">Name: <input type="text" name="user[name]" value="<%= @user.name %>"></label>
+    <label style="display:block;" for="password">Password: <input type="text" name="user[password]" placeholder="Password"></label>
+    <label style="display:block;" for="password_confirmation">Password Confirmation: <input type="text" name="user[password_confirmation]" placeholder="Confirm Password"></label>
+    <input style="display:block;" type="submit" name="submit" value="Update User">
+</form>

@@ -1,0 +1,11 @@
+<h1>Sign In</h1>
+<form action = "/sessions" method = "post">
+    <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
+    <label style="display:block;" for="email">Email: <input type="text" name="email"></label>
+    <label style="display:block;" for="password">Password: <input type="password" name="password"></label>
+    <input type = "submit" value = "Log In">
+</form>
+<h1>New to the site?</h1>
+<form action = "/users/new" method = "get">
+    <input type = "submit" value = "Create New Account!">
+</form>

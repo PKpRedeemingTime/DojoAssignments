@@ -1,0 +1,39 @@
+<h2><%= @user.name %></h2>
+<form style="display:inline" action="/users/<%=current_user.id%>/edit" method="get">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Edit User">
+</form>
+<form style="display:inline" action="/users/<%=current_user.id%>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete User">
+</form>
+<form action="/secrets" method="get">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Secrets Dashboard">
+</form>
+<h2>New Secret</h2>
+<form action="/secrets" method = "post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input style="display:block" type="text" id="Content" name = "secret[content]">
+    <input type="submit" value = "Create Secret">
+</form>
+<div style="display:flex">
+    <div style="display:inline">
+        <h2>Your Secrets</h2>
+        <% @user.secrets.each do |secret| %>
+            <h4 style="display:inline"><%= secret.content %> </h4>	
+            <% if secret.user == current_user %>
+                <form style="display:inline" action = "/secrets/<%= secret.id %>" method = "post">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type = 'submit' value = 'Delete Secret'>
+                </form>
+            <% end %>
+            <h4><%= secret.likes.count %> likes</h4>
+        <% end %>
+    </div>
+    <div style="display:inline; margin-left:25px">
+        <h2>Secrets you have liked</h2>
+    </div>
+</div>
