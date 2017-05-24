@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
-      flash[:errors] = ["Invalid Combination"]
+      flash[:errors] = ["Invalid email/password combination"]
       redirect_to root_path
     end
   end

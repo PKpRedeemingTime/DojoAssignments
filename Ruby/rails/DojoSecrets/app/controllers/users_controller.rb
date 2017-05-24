@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user, except: [:new, :create]
+  skip_before_action :require_login, only: [:new]
   def new
   end
   def show
@@ -34,6 +36,11 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
   private
+    def require_user
+      if current_user != User.find(params[:id])
+        redirect_to "/users/#{session[:user_id]}"
+      end
+    end
     def user_params
       params.require(:user).permit(:email, :name, :password, :password_confirmation)
     end

@@ -1,0 +1,79 @@
+<body>
+    <h2>Welcome!</h2>
+    <fieldset style="display:inline;">
+        <legend>Login</legend>
+        <form action="/sessions" method = "post">
+            <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
+            <label style="display:block;" for="email">Email: <input type="text" name="email"></label>
+            <label  style="display:block;" for="password">Password: <input type="password" name="password"></label>
+            <input  style="display:block;" type="submit" name="submit" value="Login">
+        </form>
+    </fieldset>
+    <fieldset  style="display:inline;">
+        <legend>Register</legend>
+        <form action="/users" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <label  style="display:block;" for="first_name">First Name: <input type="text" name="user[first_name]"></label>
+            <label  style="display:block;" for="last_name">Last Name: <input type="text" name="user[last_name]"></label>
+            <label  style="display:block;" for="email">Email Address: <input type="text" name="user[email]"></label>
+            <label  style="display:inline;" for="location">City: <input type="text" name="user[location]"></label>
+            <label style="display:inline;" for="state">State: <select name="user[state]">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+            <p>*Password should be at least 8 characters</p>
+            <label  style="display:block;" for="password">Password: <input type="password" name="user[password]"></label>
+            <label  style="display:block;" for="confirm_password">Confirm Password: <input type="password" name="user[password_confirmation]"></label>
+            <input type="submit" value="Register">
+        </form>
+    </fieldset>
+</body>

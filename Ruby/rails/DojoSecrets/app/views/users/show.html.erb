@@ -35,5 +35,9 @@
     </div>
     <div style="display:inline; margin-left:25px">
         <h2>Secrets you have liked</h2>
+        <% @user.secrets_liked.each do |secret| %>
+            <h4><%= secret.content %> </h4>
+            <h4><%= secret.likes.count %> likes</h4>
+        <% end %>
     </div>
 </div>
