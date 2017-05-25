@@ -1,0 +1,156 @@
+<body>
+    <p><%= link_to "Edit My Profile", edit_user_path(@user) %> | <%= link_to "Logout", sessions_destroy_path, :method => "delete" %></p>
+    <h4>Welcome, <%= @user.first_name %></h4>
+    <div>
+        <h4>Here are some of the events in your state:</h4>
+        <% if @count == 0 %>
+            <h3>There are no events in your state yet.</h3>
+        <% else %>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Host</th>
+                <th>Action/Status</th>
+            </tr>
+        <% end %>
+            <% @events.all.each do |event| %>
+                <% if event.state == @user.state %>
+                    <tr>
+                        <td><%= link_to event.name, event_path(event.id) %></td>
+                        <td><%= event.date %></td>
+                        <td><%= event.location %></td>
+                        <td><%= event.user.first_name %> <%= event.user.last_name %></td>
+                        <% if event.user_id != current_user.id %>
+                            <% unless event.users.include?(current_user) %>
+                                <td><%= link_to "Join", "events/#{event.id}/join" %></td>
+                            <%else %>
+                                <td><%= link_to "Cancel", "events/#{event.id}/cancel" %></td>
+                            <% end %>
+                        <% else %>
+                            <td><%= link_to "Edit", edit_event_path(event.id) %> | <%= link_to "Delete", "/events/#{event.id}", :method => "delete" %></td>
+                        <% end %>
+                    </tr>
+                <% end %>
+            <% end %>
+        </table>
+    </div>
+    <div>
+        <h4>Here are some of the events in other states:</h4>
+        <% if @count2 == 0 %>
+            <h3>There are no events outside your state yet.</h3>
+        <% else %>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>State</th>
+                    <th>Host</th>
+                    <th>Action/Status</th>
+                </tr>
+            <% end %>
+                <% @events.all.each do |event| %>
+                    <% if event.state != @user.state %>
+                        <tr>
+                            <td><%= link_to event.name, event_path(event.id) %></td>
+                            <td><%= event.date %></td>
+                            <td><%= event.location %></td>
+                            <td><%= event.state %></td>
+                            <td><%= event.user.first_name %> <%= event.user.last_name %></td>
+                            <% if event.user_id != current_user.id %>
+                                <% unless event.users.include?(current_user) %>
+                                    <td><%= link_to "Join", "events/#{event.id}/join" %></td>
+                                <%else %>
+                                    <td><%= link_to "Cancel", "events/#{event.id}/cancel" %></td>
+                                <% end %>
+                            <% else %>
+                                <td><%= link_to "Edit", edit_event_path(event.id) %> | <%= link_to "Delete", "/events/#{event.id}", :method => "delete" %></td>
+                            <% end %>
+                        </tr>
+                    <% end %>
+                <% end %>
+            </table>
+    </div>
+    <div style="margin-top:20px">
+        <fieldset style="width:450px">
+            <h4>Add Event:</h4>
+            <form action="/events" method="post">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <label  style="display:block;" for="name">Name: <input type="text" name="event[name]"></label>
+                <label  style="display:block;" for="date">Date: <input type="date" name="event[date]" id="datefield"></label>
+                <script>
+                    var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth()+1;
+                    var yyyy = today.getFullYear();
+                    if(dd<10){
+                            dd='0'+dd
+                        } 
+                        if(mm<10){
+                            mm='0'+mm
+                        } 
+
+                    today = yyyy+'-'+mm+'-'+dd;
+                    document.getElementById("datefield").setAttribute("min", today);
+                </script>
+                <label  style="display:inline;" for="location">Location: <input type="text" name="event[location]"></label>
+                <label style="display:inline;" for="state">State: <select name="event[state]">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+                <input style="display:block" type="submit" value="Add Event">
+            </form>
+        </fieldset>
+    </div>
+</body>

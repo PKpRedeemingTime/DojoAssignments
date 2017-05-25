@@ -1,0 +1,52 @@
+<body>
+    <p><%= link_to "Events Dashboard", events_path %> | <%= link_to "Logout", sessions_destroy_path, :method => "delete" %></p>
+    <div style="display:flex">
+        <div style="display:inline">
+            <h4><%= @event.name %>| <%= link_to "Edit This Event", edit_event_path(@event.id) %></h4>
+            <h5>Host: <%= @event.user.first_name %> <%= @event.user.last_name %></h5>
+            <h5>Date: <%= @event.date.strftime("%b %d, %Y") %></h5>
+            <h5>Location: <%= @event.location %>, <%= @event.state %></h5>
+            <h5>Number of people who are attending this event: <%= @attendee_count + 1 %></h5>
+            <% if @attendee_count == 0 %>
+                <h3>There are no attendees for this event yet.</h3>
+            <% else %>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>State</th>
+                    </tr>
+                    <% @attendees.all.each do |attendee| %>
+                        <tr>
+                            <td><%= attendee.user.first_name %> <%= attendee.user.last_name %></td>
+                            <td><%= attendee.user.location %></td>
+                            <td><%= attendee.user.state %></td>
+                        </tr>
+                    <% end %>
+                </table>
+            <% end %>
+        </div>
+        <div style="display:inline; margin-left:25px">
+            <div>
+                <h4>Discussion about this event:</h4>
+                <% if @count == 0 %>
+                    <h3>Start a discussion on this event!</h3>
+                <% else %>
+                    <fieldset>
+                        <% @discussions.all.each do |discussion| %>
+                            <p><strong><%= discussion.user.first_name %>: </strong> <%= discussion.content %></p>
+                        <% end %>
+                    </fieldset>
+                <% end %>
+            </div>
+            <div>
+                <h4>Add a comment:</h4>
+                <form action="/discussions/<%= @event.id %>/create" method = "post">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <input style="display:block" type="text" name = "discussion[content]">
+                    <input style="margin-top:10px" type="submit" value = "Submit Comments">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,15 +1,29 @@
 <body>
-    <p><%= link_to "Events Dashboard", events_path %> | <%= link_to "Logout", sessions_destroy_path, :method => "delete" %></p>
-    <h4>Edit Your Profile:</h4>
-    <form action="/users/<%= @user.id %>" method="post">
+   <p><%= link_to "Events Dashboard", events_path %> | <%= link_to "Logout", sessions_destroy_path, :method => "delete" %></p>
+   <h4>Edit This Event:</h4>
+   <form action="/events/<%= @event.id %>" method="post">
         <input type="hidden" name="_method" value="patch">
         <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-        <label style="display:block;" for="first_name">First Name: <input type="text" name="user[first_name]" value="<%= @user.first_name %>"></label>
-        <label style="display:block;" for="last_name">Last Name: <input type="text" name="user[last_name]" value="<%= @user.last_name %>"></label>
-        <label style="display:block;" for="email">Email Address: <input type="text" name="user[email]" value="<%= @user.email %>"></label>
-        <label style="display:inline;" for="location">City: <input type="text" name="user[location]" value="<%= @user.location %>"></label>
-        <label style="display:inline;" for="state">State: <select name="user[state]">
-            <option selected value="<%= @user.state %>"><%= @user.state %></option>
+        <label style="display:block;" for="name">Name: <input type="text" name="event[name]" value="<%= @event.name %>"></label>
+        <label style="display:block;" for="date">Date: <input type="date" name="event[date]" value="<%= @event.date %>" id="datefield"></label>
+        <script>
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+            if(dd<10){
+                    dd='0'+dd
+                } 
+                if(mm<10){
+                    mm='0'+mm
+                } 
+
+            today = yyyy+'-'+mm+'-'+dd;
+            document.getElementById("datefield").setAttribute("min", today);
+        </script>
+        <label style="display:inline;" for="location">City: <input type="text" name="event[location]" value="<%= @event.location %>"></label>
+        <label style="display:inline;" for="state">State: <select name="event[state]">
+            <option selected value="<%= @event.state %>"><%= @event.state %></option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -61,14 +75,12 @@
             <option value="WV">West Virginia</option>
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
-        </select>
-        <label  style="display:block;" for="password">Password: <input type="password" name="user[password]"></label>
-        <label  style="display:block;" for="confirm_password">Confirm Password: <input type="password" name="user[password_confirmation]"></label>
-        <input style="display:block;" type="submit" value="Update Records">
+            </select>
+        <input style="display:block;" type="submit" value="Update">
     </form>
-    <form action = "/users/<%= @user.id %>" method = "post">
+    <form action = "/events/<%= @event.id %>" method = "post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="_method" value="delete">
-        <input style="background-color:red; margin-top:20px; height:30px" type = 'submit' value = "Delete Account">
+        <input style="background-color:red; margin-top:20px; height:30px" type = 'submit' value = "Delete Event">
     </form>
 </body>
