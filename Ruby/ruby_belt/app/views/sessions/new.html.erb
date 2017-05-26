@@ -1,0 +1,25 @@
+<body>
+    <h2>Welcome!</h2>
+    <fieldset style="display:inline;">
+        <legend>Login</legend>
+        <form action="/sessions" method = "post">
+            <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
+            <label style="display:block;" for="email">Email: <input type="text" name="email"></label>
+            <label  style="display:block;" for="password">Password: <input type="password" name="password"></label>
+            <input  style="display:block;" type="submit" name="submit" value="Login">
+        </form>
+    </fieldset>
+    <fieldset  style="display:inline;">
+        <legend>Register</legend>
+        <form action="/users" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <label  style="display:block;" for="first_name">First Name: <input type="text" name="user[first_name]"></label>
+            <label  style="display:block;" for="last_name">Last Name: <input type="text" name="user[last_name]"></label>
+            <label  style="display:block;" for="email">Email Address: <input type="text" name="user[email]"></label>
+            <p>*Password should be at least 8 characters</p>
+            <label  style="display:block;" for="password">Password: <input type="password" name="user[password]"></label>
+            <label  style="display:block;" for="confirm_password">Confirm Password: <input type="password" name="user[password_confirmation]"></label>
+            <input type="submit" value="Register">
+        </form>
+    </fieldset>
+</body>

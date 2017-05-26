@@ -1,0 +1,27 @@
+<div style="display:flex">
+<h2 style="display:inline">Hi, <%= @user.first_name %>!</h2>
+<p style="display:inline; margin-left:75px"><%= link_to "Go to Dashboard", user_path(@user.id) %> | <%= link_to "Logout", "/sessions/1", :method => "delete" %></p>
+</div>
+<h4>All Products</h4>
+    <% if @count == 0 %>
+        <h3>There are no available products at this time.</h3>
+    <% else %>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Seller</th>
+                <th>Date Posted</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+    <% end %>
+        <% @products.all.each do |product| %>
+            <tr>
+                <td><%= product.name %></td>
+                <td><%= product.user.first_name %> <%= product.user.last_name %></td>
+                <td><%= product.created_at.strftime("%b %d, %Y") %></td>
+                <td>$<%= product.amount %></td>
+                <td><%= link_to "Buy", "purchases/#{product.id}/create" %></td>
+            </tr>
+        <% end %>
+    </table>
