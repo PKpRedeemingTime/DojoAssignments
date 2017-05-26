@@ -57,7 +57,6 @@ gem 'hirb'
 gem 'bootstrap-sass'
 gem "carrierwave"
 gem 'rails-footnotes'
-gem 'pg'
 # rails generate rails_footnotes:install
 # rails generate rspec:install
 # rails console >>>> Hirb.enable
