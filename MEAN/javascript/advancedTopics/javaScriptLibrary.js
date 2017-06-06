@@ -30,7 +30,6 @@ var _ = {
         tempArray.push(array[i]);
       }
     }
-    // we could also modify the original array
     return tempArray;
   },
   reject: function(array, callback){
@@ -40,16 +39,14 @@ var _ = {
         tempArray.push(array[i]);
       }
     }
-    // we could also modify the original array
     return tempArray;
   },
 }
 
 var array = [3,4,5]
-_.map(array, function callback(x){return x * 5;});
+_.map(array, function callback(num){return num * 5;});
 console.log(array);
-console.log(_.reduce(array, function callback(x, memo){return x + memo;}));
-console.log(_.find(array, function callback(x){return x == 15;}));
-// note: we used named functions for clarity above, but we can also pass anonymous functions as the second parameter:
-_.filter(array, function(x){return x > 20;})
-console.log(array);
+console.log(_.reduce(array, function callback(num, memo){return num + memo;}));
+console.log(_.find(array, function callback(num){return num == 15;}));
+console.log(_.filter(array, function callback(num){return num > 20;}))
+console.log(_.reject(array, function callback(num){return num < 20;}))
