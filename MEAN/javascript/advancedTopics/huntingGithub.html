@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Hunting Github</title>
+        <meta charset='UTF-8'>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <style type="text/css">
+            button {
+                height: 350px;
+                width: 700px;
+                font-size: 100px;
+                background-color: blue;
+                display: block;
+            }
+        </style>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                $(document).on('click', 'button', function() {
+                    $.get("https://api.github.com/users/PKPRedeemingTime", displayName)
+                        function displayName(data) {
+                            $(".myName").html(`<h1>${data.name}</h1>`);
+                        };
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button>My Name Is...</button>
+        <div class="myName"></div>
+    </body>
+</html>
