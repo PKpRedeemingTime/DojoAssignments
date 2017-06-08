@@ -11,10 +11,16 @@ var server = app.listen(8000, function() {
  console.log("listening on port 8000");
 });
 var io = require('socket.io').listen(server);
+var count = 0;
 io.sockets.on('connection', function (socket){
-    socket.on("posting_form", function (data){
-        var random_number = Math.floor((Math.random() * 1000) + 1);
-        socket.emit('updated_message', {response: data }); 
-        socket.emit('random_number', {response: random_number}); 
+    socket.on("update_count", function (data){
+        count++;
+        console.log(count);
+        io.emit('count_updated', {response: count});
+    })
+    socket.on("reset_count", function (data){
+        count = 0;
+        console.log(count);
+        io.emit('count_reset', {response: count});
     })
 })
