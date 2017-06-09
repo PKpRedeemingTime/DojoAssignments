@@ -17,10 +17,10 @@
                 });
 			});
 			socket.on('updated_message', function (data){
-			    $('#message').html("You emitted the following information to the server: " + JSON.stringify(data.response));
+			    $('#message').html(`<p>You emitted the following information to the server:  ${JSON.stringify(data.response)}  </p>`);
 			});
 			socket.on('random_number', function (data){
-			   $('#number').html("Your lucky number emitted by the server is : " + JSON.stringify(data.response));
+			   $('#number').html(`<p>Your lucky number emitted by the server is :  ${JSON.stringify(data.response)} </p>`);
 			});
         });
         </script>

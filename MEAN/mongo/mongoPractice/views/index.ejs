@@ -1,0 +1,13 @@
+<fieldset style="width:250px; padding:20px">
+    <form action="/users" method="post">
+        <label style="display:block;" for="name">Your Name: <input type="text" name="name"></label>
+        <label style="display:block;" for="age">Your Age: <input type="number" name="age"></label>
+        <input style="display:block;" type="submit" name="submit" value="Submit">
+    </form>
+</fieldset>
+<div class="display_users">
+    <% for(var i = 0; i < users.length; i++) { %>
+        <h3>Name: <%= users[i].name %></h3>
+        <h4>Age: <%= users[i].age %></h4>
+    <% } %>
+</div>
