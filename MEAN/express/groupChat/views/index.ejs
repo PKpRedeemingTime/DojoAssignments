@@ -21,6 +21,12 @@
             socket.on('#send_message', function(data) {
                 $('#chatBox').append(`<p>${data.message} - ${data.sender}</p>`)
             })
+            socket.on('user_left', function(data) {
+                $("#users").html("");
+                for(var i = 0; i < data.all_users.length; i++) {
+                    $('#users').append(`<p>${data.all_users[i]}</p>`)
+                }
+            })
         });
     </script>
 </head>

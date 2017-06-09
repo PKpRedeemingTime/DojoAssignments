@@ -27,4 +27,16 @@ io.sockets.on('connection', function (socket){
         data.sender = sender.username;
         io.emit("#send_message", data);
     })
+    socket.on("disconnect", function() {
+        var index = users.findIndex(function(x) {
+            return x.id == socket.id;
+        })
+        if(index) {
+            users.splice(index,1);
+            var names_arr = users.map(function(x) {
+                return x.username;
+            })
+            io.emit('user_left', {users:names_arr});
+        }
+    })
 })
