@@ -1,0 +1,13 @@
+<h1>Enter a new panther in our database!</h1>
+<% if(typeof(errors) != 'undefined' ) { %>
+     <% for (var x in errors) { %>
+      <h3><%= errors[x].message %></h3>
+     <% } %>
+ <% } %>
+<fieldset style="width:250px; padding:20px">
+    <form action="/panthers" method="post">
+        <label style="display:block;" for="name">Panther Name: <input type="text" name="name"></label>
+        <label style="display:block;" for="age">Panther Age: <input type="number" name="age"></label>
+        <input style="display:block;" type="submit" name="submit" value="Submit">
+    </form>
+</fieldset>

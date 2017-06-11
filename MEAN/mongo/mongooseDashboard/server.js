@@ -7,9 +7,9 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/mongooseDashboard');
 var PantherSchema = new mongoose.Schema({
     name:  { type: String, required: true},
-    qage: { type: String, required: true, min: 0, max: 75 },
+    age: { type: Number, required: true, min: 0, max: 75 },
 }, {timestamps: true });
-mongoose.model('User', UserSchema);
+mongoose.model('Panther', PantherSchema);
 var Panther = mongoose.model('Panther')
 var path = require('path');
 app.use(express.static(path.join(__dirname, './static')));
@@ -20,30 +20,65 @@ app.get('/', function(req, res) {
         if(err) {
             console.log('something went wrong');
         } else {
-            res.render('/', { panthers: panthers });
+            res.render('index', { panthers: panthers });
         }
     })
 })
-app.get('/show/:id', function(req, res) {
+app.get('/new', function(req, res) {
     Panther.find({}, function(err, panthers) {
         if(err) {
             console.log('something went wrong');
         } else {
-            res.render('show', { panthers: panthers });
+            res.render('new', { panthers: panthers });
+        }
+    })
+})
+app.get('/:id/show', function(req, res) {
+    Panther.find({_id:req.params.id}, function(err, response) {
+        if(err) {
+            console.log('something went wrong');
+        } else {
+            res.render('show', { panther: response[0] });
+        }
+    })
+})
+app.get('/:id/edit', function(req, res) {
+    Panther.find({_id:req.params.id}, function(err, response) {
+        if(err) {
+            console.log('something went wrong');
+        } else {
+            res.render('edit', { panther: response[0] });
         }
     })
 })
 app.post('/panthers', function(req, res) {
-    console.log("POST DATA", req.body);
   var panther = new Panther({name: req.body.name, age: req.body.age});
   panther.save(function(err) {
     if(err) {
-      res.render('index', {title: 'you have errors!', errors: panther.errors})
+      res.render('new', {title: 'you have errors!', errors: panther.errors})
     } else {
       console.log('successfully added a panther!');
-      res.redirect('/show/:id');
+      res.redirect('/');
     }
   })
+})
+app.post('/:id', function(req, res) {
+    Panther.update({_id: req.params.id}, req.body, function(err, result) {
+        if(err) {
+            console.log(err);
+        } else {
+        res.redirect('/');
+        }
+    })
+})
+app.post('/:id/delete', function(req, res) {
+    Panther.remove({_id: req.params.id}, function(err, result) {
+        if(err) {
+            console.log(err);
+        } else {
+        res.redirect('/');
+        }
+    })
 })
 app.listen(8000, function() {
     console.log("listening on port 8000");
