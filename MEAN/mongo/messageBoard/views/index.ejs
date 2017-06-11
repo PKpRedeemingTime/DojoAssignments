@@ -1,0 +1,28 @@
+<h1>The Dojo Message Board</h1>
+<hr></hr>
+<% if(typeof(errors) != 'undefined' ) { %>
+     <% for (var x in errors) { %>
+      <h3><%= errors[x].message %></h3>
+     <% } %>
+ <% } %>
+<form action="/message" method="post">
+    <label style="display:block;" for="name">Name: <input type="text" name="name"></label>
+    <label style="display:block;" for="message">Message: <input style="width:700px; height:100px;" type="text" name="message"></label>
+    <input style="display:block;" type="submit" name="submit" value="Post Message">
+</form>
+<% for(var x = 0; x < messages.length; x++) { %>
+    <h3>Name: <%= messages[x].name %></h3>
+    <h4>Message: <%= messages[x].message %></h4>
+    <div style="margin-left:100px">
+        <% for(var y = 0; y < messages[x]._comments.length; y++) { %>
+            <p>Name: <%= messages[x]._comments[y].name %></p>
+            <p>Comment: <%= messages[x]._comments[y].comment %></p>
+        <% } %>
+        <form action="<%= '/comment/' + messages[x]._id %>"  method="post">
+            <label style="display:block;" for="name">Name: <input type="text" name="name"></label>
+            <label style="display:block;" for="comment">Comment: <input style="width:300px; height:50px;" type="text" name="comment"></label>
+            <input style="display:block;" type="submit" name="submit" value="Post Comment">
+        </form>
+    </div>
+    <hr></hr>
+<% } %>
