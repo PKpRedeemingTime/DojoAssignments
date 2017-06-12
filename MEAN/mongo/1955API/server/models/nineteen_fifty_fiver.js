@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
 var Nineteen_Fifty_FiverSchema = new mongoose.Schema({
     name:  { type: String, required: true},
 }, {timestamps: true });
