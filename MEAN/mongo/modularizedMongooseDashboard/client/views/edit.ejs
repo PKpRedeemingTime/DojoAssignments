@@ -1,0 +1,10 @@
+<h1>Edit this panther's information.</h1>
+<form action="/<%= panther.id %>" method="post">
+    <label style="display:block;" for="name">Panther Name: <input type="text" name="name" value="<%= panther.name %>"></label>
+    <label style="display:block;" for="age">Panther Age: <input type="number" name="age" value="<%= panther.age %>"></label>
+    <input style="display:block;" type="submit" name="submit" value="Submit">
+</form>
+<form action="/<%= panther._id %>/delete" method="post">
+    <h3>To delete this panther from the database, click this button.</h3>
+    <input style="display:block;" type="submit" name="submit" value="DELETE">
+</form>

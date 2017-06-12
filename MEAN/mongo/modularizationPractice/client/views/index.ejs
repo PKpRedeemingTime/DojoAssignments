@@ -1,0 +1,13 @@
+<% if(typeof(errors) != 'undefined' ) { %>
+     <% for (var x in errors) { %>
+      <h3><%= errors[x].message %></h3>
+     <% } %>
+ <% } %>
+<fieldset style="width:250px; padding:20px">
+    <form action="/quotes" method="post">
+        <label style="display:block;" for="name">Your Your Name: <input type="text" name="name"></label>
+        <label style="display:block;" for="quote">Your Quote:</label>
+        <input style="display:block; width: 200px; height:100px;" type="text" name="quote">
+        <input style="display:block;" type="submit" name="submit" value="Submit">
+    </form>
+</fieldset>

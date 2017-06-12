@@ -1,0 +1,11 @@
+cd C:/
+cd "Program Files"
+cd MongoDB/Server/3.4/bin
+./mongod
+
+new Bash!
+
+cd C:/
+cd "Program Files"
+cd MongoDB/Server/3.4/bin
+./mongo
