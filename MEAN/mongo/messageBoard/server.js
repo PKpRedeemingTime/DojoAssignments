@@ -10,7 +10,7 @@ var Schema = mongoose.Schema;
 var MessageSchema = new mongoose.Schema({
     name:  { type: String, required: true, minlength: 4 },
     message: { type: String, required: true },
-    _comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}],
+    _comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}], //The underscore here shouldn't be used, it's only used on the many side, not the one side
 }, {timestamps: true });
 var CommentSchema = new mongoose.Schema({
     _message: {type: Schema.Types.ObjectId, ref: 'Message'},
@@ -19,23 +19,23 @@ var CommentSchema = new mongoose.Schema({
 }, {timestamps: true });
 mongoose.model('Message', MessageSchema);
 mongoose.model('Comment', CommentSchema);
-var Message = mongoose.model('Message')
-var Comment = mongoose.model('Comment')
+var Message = mongoose.model('Message');
+var Comment = mongoose.model('Comment');
 app.use(express.static(path.join(__dirname, './static')));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
     Message.find({}, false, true).populate('_comments').exec(function(err, messages){
-	    res.render('index.ejs', {messages: messages});
+	    res.render('index', {messages: messages});
 	});
-})
+});
 app.post('/message', function(req, res) {
     var message = new Message({name: req.body.name, message: req.body.message});
     message.save(function(err) {
         if(err) {
             console.log(err);
             Message.find({}, false, true).populate('_comments').exec(function(err, messages){
-                res.render('index.ejs', {messages: messages, errors: message.errors });
+                res.render('index', {messages: messages, errors: message.errors });
             });
         } 
         else {
