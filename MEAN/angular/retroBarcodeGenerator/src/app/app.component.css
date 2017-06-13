@@ -1,0 +1,55 @@
+.wrapper {
+    display:flex;
+    justify-content: center;
+}
+.one {
+    height:50px;
+    width:50px;;
+    background-color: blue;
+}
+.two {
+    height:50px;
+    width:50px;
+    background-color: "#"+((1<<24)*Math.random()|0).toString(16);
+}
+.three {
+    height:50px;
+    width:50px;
+    background-color: blue;
+}
+.four {
+    height:50px;
+    width:50px;
+    background-color: green;
+}
+.five {
+    height:50px;
+    width:50px;
+    background-color: blue;
+}
+.six {
+    height:50px;
+    width:50px;
+    background-color: green;
+}
+.seven {
+    height:50px;
+    width:50px;
+    background-color: blue;
+}
+.eight {
+    height:50px;
+    width:50px;
+    background-color: green;
+}
+.nine {
+    height:50px;
+    width:50px;
+    background-color: blue;
+}
+.ten {
+    display:inline;
+    height:50px;
+    width:50px;
+    background-color: green;
+}

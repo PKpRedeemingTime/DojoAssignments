@@ -1,0 +1,2 @@
+ng new name_of_project
+ng serve (runs server)

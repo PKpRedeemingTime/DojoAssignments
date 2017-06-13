@@ -3,5 +3,22 @@ cd {name_of_project}
 npm init -y
 npm install express ejs body-parser mongoose --save
 touch server.js (update database name!)
-mkdir static
-mkdir views
+mkdir client
+cd client
+mkdir static (create necessary stylesheets, images, or javascript folders here)
+mkdir views (all ejs files here, in separate folders if necessary)
+cd main_project_folder
+mkdir server
+cd server
+mkdir config
+mkdir controllers
+mkdir models
+cd config
+touch routes.js
+touch mongoose.js
+cd ..
+cd models
+touch singular_name_of_model.js for each model
+cd ..
+cd controllers
+touch plural_name_of_model.js for each model

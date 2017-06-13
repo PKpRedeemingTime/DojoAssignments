@@ -1,0 +1,28 @@
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>
+    for(var i=0; i<1000; i++){
+    var color ='#'+Math.random().toString(16).substr(2,6);
+    var div = $('<div>').css('background-color', color);
+    $('body').append(div);
+    if(!div.attr('style')) console.log(color);
+  }
+  </script>
+  <title></title>
+</head>
+<div style="text-align:center">
+  <h1>{{title}}</h1>
+</div>
+<div class="wrapper">
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+  <div class="four"></div>
+  <div class="five"></div>
+  <div class="six"></div>
+  <div class="seven"></div>
+  <div class="eight"></div>
+  <div class="nine"></div>
+  <div class="ten"></div> 
+</div>
