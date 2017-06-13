@@ -7,4 +7,7 @@
     <button class="{{ fourClass }}" value="click 4" (click)="fourClicked()">EST</button>
     <button class="{{ fiveClass }}" value="click 5" (click)="fiveClicked()">Clear</button>
   </div>
+  <div class="dateTime">
+    {{ today | date:'medium' }}
+  </div>
 </div>

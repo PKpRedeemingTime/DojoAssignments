@@ -19,3 +19,8 @@ button {
     height:35px;
     background-color: yellow;
 }
+
+.dateTime {
+    margin-top: 20px;
+    font-size: 40px;
+}
