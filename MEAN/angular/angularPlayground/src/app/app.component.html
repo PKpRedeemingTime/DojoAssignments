@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1>{{title}}</h1>
+  <button (click)='logNum()'>Log the num value</button>
+  <button (click)='numIncrement()'>Increment num</button>
+  <form (submit)="onSubmit()">
+    <div *ngIf="!firstName.valid"><p>First name errors</p></div>
+    <input type="text" name="firstName" required minlength='4' maxlength='24' [(ngModel)]="user.firstName" #firstName="ngModel">
+    {{ firstName.errors | json }}
+    {{ firstName.valid | json }}
+    <div *ngIf="!lastName.valid"><p>Last name errors</p></div>
+    <input type="text" name="lastName" required minlength='4' maxlength='24' [(ngModel)]="user.lastName" #lastName="ngModel">
+    {{ lastName.errors | json }}
+    {{ lastName.valid | json }}
+    <input type="submit">
+  </form>
+</div>
+
+{{ user | json }}

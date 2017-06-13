@@ -1,0 +1,21 @@
+.wrapper {
+    text-align: center;
+}
+
+.body {
+    width:675px;
+    display:flex;
+    justify-content: space-around;
+    margin-left: 425px;
+}
+
+button {
+    width:50px;
+    height:35px;
+}
+
+.yellow {
+    width:50px;
+    height:35px;
+    background-color: yellow;
+}
