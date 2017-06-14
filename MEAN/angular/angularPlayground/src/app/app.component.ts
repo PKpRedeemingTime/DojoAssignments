@@ -8,10 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   users = [];
-  user = {
-    firstName: '',
-    lastName: '',
-  }
+  
 
   title = 'Angular Playground';
 
