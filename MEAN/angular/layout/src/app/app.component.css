@@ -1,0 +1,12 @@
+.wrapper {
+    margin: 0px auto;
+    width: 1000px;
+    padding:10px;
+}
+
+.header {
+    background-color: lightblue;
+    padding: 10px;
+    padding-top: 0px;
+    border: 1px solid black;
+}

@@ -1,0 +1,23 @@
+.body_wrapper {
+    display:flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.navigation {
+    background-color: lightblue;
+    display: inline;
+    padding: 5px;
+    padding-top: 0px;
+    width: 200px;
+    border: 1px solid black;
+}
+
+.main_content {
+    background-color: lightblue;
+    display: inline;
+    padding: 5px;
+    padding-top: 0px;
+    width: 700px;
+    border: 1px solid black;
+}
