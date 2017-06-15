@@ -9,7 +9,7 @@ export class BodyComponent implements OnInit {
 
   constructor() { }
 
-  @Input() power;
+  @Input() saiyan;
 
   ngOnInit() {
   }

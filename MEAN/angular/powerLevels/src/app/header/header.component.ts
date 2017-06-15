@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,12 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() saiyan;
+  @Output() updatePower = new EventEmitter();
   constructor() { }
-  @Input() power;
-  powers = [];
-  onSubmit() {
-    event.preventDefault();
-    this.powers.push(this.power);
+  
+  onSubmit(power) {
+    console.log("submitted", power.power);
+    this.updatePower.emit(power.power);
   }
 
   ngOnInit() {

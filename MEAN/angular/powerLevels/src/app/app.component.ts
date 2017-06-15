@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Power } from './power';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,9 @@ import { Power } from './power';
 })
 export class AppComponent {
   title = 'app';
-  powers = [];
-  power = new Power();
-  dataFromChild(eventData) {
-    console.log(eventData);
+  saiyan = 0;
+  power_function(event) {
+    this.saiyan = event;
+    console.log("called parent", this.saiyan);
   }
 }

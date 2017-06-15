@@ -1,7 +1,7 @@
-<form (submit)="onSubmit()">
+<form (submit)="onSubmit(power)">
     <div class="power-form">
        <label  for="power">Initial Power Level: <input type="number" name="power" min="1" max="100"[(ngModel)]="power.power" #power='ngModel'></label>
-        <input type="submit" value="Calculate Powers"> 
+        <input type="submit" value="Calculate Powers">
     </div>
     <img src="https://s-media-cache-ak0.pinimg.com/736x/5d/93/69/5d9369d9344d8b27b42ed8ae72ff2669.jpg" alt="Dragon Ball Z Guy">
 </form>

@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SuperSaiyanFourComponent implements OnInit {
 
   constructor() { }
-  @Input() power;
+  @Input() saiyan;
   ngOnInit() {
   }
 
