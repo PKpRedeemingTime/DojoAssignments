@@ -8,4 +8,12 @@ import { Quote } from './quote';
 })
 export class AppComponent {
   title = 'app';
+  quote = new Quote;
+  quotes = [];
+  updateQuote(event) {
+    this.quote = new Quote(event.quote, event.author, 0);
+    this.quotes.push(this.quote);
+    this.quote = new Quote;
+  }
+  
 }

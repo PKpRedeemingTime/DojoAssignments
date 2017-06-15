@@ -1,8 +1,8 @@
 <div>
   <div class="add_quote">
-    <app-add-quote [quote]='quote'></app-add-quote>
+    <app-add-quote [quote]='quote'(updateQuote)="updateQuote($event)"></app-add-quote>
   </div>
   <div class="display_quote">
-    <app-display-quote [quote]='quote'></app-display-quote>
+    <app-display-quote [quotes]='quotes'></app-display-quote>
   </div>
 </div>

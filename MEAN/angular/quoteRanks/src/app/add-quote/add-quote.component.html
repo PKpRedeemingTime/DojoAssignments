@@ -1,4 +1,4 @@
-<form (submit)="onSubmit()">
+<form (submit)="onSubmit(quote)">
   <h1>Add a Quote</h1>
   <div class="add_quote">
     <input style="display:inline" type="textarea" name="quote" required [(ngModel)]="quote.quote" #quote='ngModel'>
