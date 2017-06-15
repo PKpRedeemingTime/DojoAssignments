@@ -1,0 +1,12 @@
+<form (submit)="onSubmit()">
+  <h1>Add a Quote</h1>
+  <div class="add_quote">
+    <input style="display:inline" type="textarea" name="quote" required [(ngModel)]="quote.quote" #quote='ngModel'>
+  <div class="red" *ngIf="!quote.valid"><p>Quote is required</p></div>
+  </div>
+  <div class="add_quote">
+    <label style="display:inline" for="author">Author: <input type="text" name="author" required [(ngModel)]="quote.author" #author='ngModel'></label>
+    <div class="red" *ngIf="!author.valid"><p>Author is required</p></div>
+  </div>
+  <input style="display:block;" type="submit" value="Add a Quote">
+</form>

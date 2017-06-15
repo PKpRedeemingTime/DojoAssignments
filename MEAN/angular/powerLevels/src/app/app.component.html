@@ -1,0 +1,11 @@
+<fieldset>
+  <legend>Power Component</legend>
+  <div class="wrapper">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="body">
+      <app-body [power]='power' (updatePower)="dataFromChild($event)"></app-body>
+    </div>
+  </div>
+</fieldset>

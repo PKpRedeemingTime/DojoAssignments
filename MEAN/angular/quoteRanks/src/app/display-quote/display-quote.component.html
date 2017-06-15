@@ -1,0 +1,11 @@
+<h1>Quotes List</h1>
+<div *ngFor="let quote of quotes">
+    <fieldset>
+        <p>{{quote.quote}}</p>
+        <p>-{{quote.author}}</p>
+        <p>{{quote.vote}}</p>
+        <button>Vote Up</button>
+        <button>Vote Down</button>
+        <button>Delete</button>
+    </fieldset>
+</div>
