@@ -1,0 +1,37 @@
+.wrapper {
+    display:flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.div_class {
+    display:inline;
+}
+
+.block {
+    display: block;
+}
+
+.submit {
+    margin-top: 20px;
+}
+
+.red {
+    color:red;
+}
+
+.orange {
+    color:orange;
+}
+
+.black {
+    color:black;
+}
+
+.green {
+    color:green;
+}
+
+.blue {
+    color:blue;
+}

@@ -12,11 +12,11 @@ export class DisplayQuoteComponent implements OnInit {
   ngOnInit() {
   }
 
-  upVote(quote, i) {
+  upVote(quote) {
     quote.vote++;
   }
 
-  downVote(quote, i) {
+  downVote(quote) {
     quote.vote--;
   }
 

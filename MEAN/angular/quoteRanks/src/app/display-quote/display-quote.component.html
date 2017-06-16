@@ -4,8 +4,8 @@
         <p>{{quote.quote}}</p>
         <p>-{{quote.author}}</p>
         <p>+{{quote.vote}}</p>
-        <button (click)="upVote(quote, i)">Vote Up</button>
-        <button (click)="downVote(quote, i)">Vote Down</button>
+        <button (click)="upVote(quote)">Vote Up</button>
+        <button (click)="downVote(quote)">Vote Down</button>
         <button  (click)="delete(quote, i)">Delete</button>
     </fieldset>
 </div>

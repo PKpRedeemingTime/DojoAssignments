@@ -1,7 +1,7 @@
 <fieldset>
     <legend>SaiyanComponent</legend>
     <p>Power Level: {{ saiyan * 10 }}</p>
-    <h4 *ngIf="saiyan * 10 > 9000 && saiyan * 10 < 20000 ">Over 9000!</h4>
-    <h4 *ngIf="saiyan * 10 >= 20000 && saiyan * 10 != 50000">Superlative!</h4>
-    <h4 *ngIf="saiyan * 10 == 50000">The One</h4>
+    <h4 *ngIf="saiyan * 10 >= 9000 && saiyan * 10 < 20000 ">Over 9000!</h4>
+    <h4 *ngIf="saiyan * 10 >= 20000 && saiyan * 10 < 50000">Superlative!</h4>
+    <h4 *ngIf="saiyan * 10 >= 50000">The One</h4>
 </fieldset>
