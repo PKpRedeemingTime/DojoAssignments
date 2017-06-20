@@ -1,0 +1,6 @@
+<fieldset *ngFor="let product of products, let i = index">
+    <img [src]="product.image" alt="picture">
+    <p>Product: {{product.product}}</p>
+    <p>Product Price: ${{product.price}}</p>
+    <a [routerLink]="['/edit', i]">Edit</a>
+</fieldset>

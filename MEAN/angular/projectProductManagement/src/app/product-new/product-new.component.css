@@ -1,0 +1,12 @@
+.pages {
+    background-color: #e8f1f2;
+}
+
+label {
+    display:inline-block;
+}
+
+.create {
+    display:block;
+    background-color: green;
+}

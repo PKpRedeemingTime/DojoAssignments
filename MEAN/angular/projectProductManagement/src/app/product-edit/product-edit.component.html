@@ -1,0 +1,12 @@
+<fieldset class="pages">
+  <h2>Edit {{product.product}}</h2>
+  <form (submit)="update(product, price, image)">
+    <label for="product">Title: <input type="text" name="product" [(ngModel)]="title" #product='ngModel'></label>
+    <label for="price">Price: <input type="text" name="price" [(ngModel)]="cost" #price='ngModel'></label>
+    <label for="image">Image URL: <input type="text" name="image" [(ngModel)]="picture" #image='ngModel'></label>
+    <div class="buttons">
+      <button (click)="delete()" class="delete">Delete</button>
+      <input class="create" type="submit" value="Update">
+    </div>
+  </form>
+</fieldset>

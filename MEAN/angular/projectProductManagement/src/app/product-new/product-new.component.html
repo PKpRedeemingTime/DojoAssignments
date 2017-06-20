@@ -1,0 +1,12 @@
+<fieldset class="pages">
+  <h2>Create a New Product</h2>
+  <form (submit)="createProduct(product)">
+    <label for="product">Title: <input type="text" name="product" required [(ngModel)]="product.product" #product='ngModel'></label>
+    <p *ngIf="!product.valid">Title is required</p>
+    <label for="price">Price: <input type="text" name="price" required [(ngModel)]="product.price" #price='ngModel'></label>
+    <p *ngIf="!price.valid">Price is required</p>
+    <label for="image">Image URL: <input type="text" name="image" required [(ngModel)]="product.image" #image='ngModel'></label>
+    <p *ngIf="!image.valid">Image is required</p>
+    <input class="create" type="submit" value="Create">
+  </form>
+</fieldset>

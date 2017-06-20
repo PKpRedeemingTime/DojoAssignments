@@ -1,0 +1,21 @@
+.pages {
+    background-color: #e8f1f2;
+}
+
+label {
+    display:inline-block;
+}
+
+.buttons {
+    display:block;
+}
+
+.create {
+    display:inline;
+    background-color: blue;
+}
+
+.delete {
+    display:inline;
+    background-color: red;
+}
