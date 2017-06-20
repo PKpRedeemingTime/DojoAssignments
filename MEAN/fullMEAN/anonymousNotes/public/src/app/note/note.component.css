@@ -1,0 +1,26 @@
+.wrapper {
+    background-color: #dddddd;
+    padding: 10px;
+}
+
+.note_input {
+    width: 600px;
+}
+
+.submit {
+    background-color: green;
+    margin-left: 12px;
+}
+
+fieldset {
+    padding: 20px;
+}
+
+.created_at {
+    text-align: right;
+}
+
+.scroll {
+    overflow-y: scroll;
+    height: 580px;
+}

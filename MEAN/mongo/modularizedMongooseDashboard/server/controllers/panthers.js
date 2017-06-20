@@ -7,20 +7,20 @@ module.exports = {
     index: function(req, res) {
         Panther.find({}, function(err, panthers) {
             console.log(err);
-            res.render('index', {panthers: panthers});
+            res.json(panthers);
         })
     },
-    new: function(req, res) {
-        Panther.find({}, function(err, panthers) {
-            res.render('new', {panthers: panthers});
-        })
-    },
+    // new: function(req, res) {
+    //     Panther.find({}, function(err, panthers) {
+    //         res.json(panthers);
+    //     })
+    // },
     show: function(req, res) {
         Panther.find({_id:req.params.id}, function(err, response) {
         if(err) {
             console.log('something went wrong');
         } else {
-            res.render('show', { panther: response[0] });
+            res.json(response[0]);
         }
     })
     },
@@ -29,37 +29,37 @@ module.exports = {
         if(err) {
             console.log('something went wrong');
         } else {
-            res.render('edit', { panther: response[0] });
+            res.json(response[0]);
         }
     })
     },
-    create: function(req, res) {
-        var panther = new Panther({name: req.body.name, age: req.body.age});
-        panther.save(function(err) {
-        if(err){
-            console.log("something went wrong");
-            res.render('new', {title: 'you have errors!', errors: panther.errors})
-        } else {
-            res.redirect('/');
-        }
-        })
-    },
-    update: function(req, res) {
-        Panther.update({_id: req.params.id}, req.body, function(err, result) {
-            if(err) {
-                console.log(err);
-            } else {
-            res.redirect(req.params.id + '/show');
-            }
-        })
-    },
-    destroy: function(req, res) {
-        Panther.remove({_id: req.params.id}, function(err, result) {
-            if(err) {
-                console.log(err);
-            } else {
-            res.redirect('/');
-            }
-        })
-    },
+    // create: function(req, res) {
+    //     var panther = new Panther({name: req.body.name, age: req.body.age});
+    //     panther.save(function(err) {
+    //     if(err){
+    //         console.log("something went wrong");
+    //         res.json(panther.errors)
+    //     } else {
+    //         res.redirect('/');
+    //     }
+    //     })
+    // },
+    // update: function(req, res) {
+    //     Panther.update({_id: req.params.id}, req.body, function(err, result) {
+    //         if(err) {
+    //             console.log(err);
+    //         } else {
+    //         res.redirect(req.params.id + '/show');
+    //         }
+    //     })
+    // },
+    // destroy: function(req, res) {
+    //     Panther.remove({_id: req.params.id}, function(err, result) {
+    //         if(err) {
+    //             console.log(err);
+    //         } else {
+    //         res.redirect('/');
+    //         }
+    //     })
+    // },
 }

@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <h1>Anonymous Notes</h1>
+  <fieldset>
+    <form (submit)="createNote(note)">
+      <label for="note">Note: <input class="note_input" type="text" name="note" required [(ngModel)]="note.content"></label>
+      <input class="submit" type="submit" name="submit" value="Add Note">
+    </form>
+  </fieldset>
+  <div class="scroll">
+    <fieldset *ngFor="let note of notes">
+      <p class="created_at" >{{ note.createdAt | date:'medium' }}</p>
+      <p>{{ note.content }}</p>
+    </fieldset>
+  </div>
+</div>
