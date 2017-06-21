@@ -1,7 +1,7 @@
 <div class="wrapper">
   <h1>Anonymous Notes</h1>
   <fieldset>
-    <form (submit)="createNote(note)">
+    <form (submit)="createNote()">
       <label for="note">Note: <input class="note_input" type="text" name="note" required [(ngModel)]="note.content"></label>
       <input class="submit" type="submit" name="submit" value="Add Note">
     </form>

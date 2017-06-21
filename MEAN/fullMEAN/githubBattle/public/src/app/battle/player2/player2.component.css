@@ -1,0 +1,15 @@
+.submit {
+    display:block;
+    width: 280px;
+    margin-top: 20px;
+    background-color: #2b78e4;
+    color: white;
+}
+
+.player {
+    display:inline;
+}
+
+fieldset {
+    width:300px;
+}

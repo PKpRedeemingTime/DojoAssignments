@@ -6,7 +6,6 @@ import 'rxjs'
 export class NotesService {
 
   constructor(private _http:Http) { }
-  notes = {};
   get() {
     return this._http.get('/notes').map(res=>res.json()).toPromise();
   }

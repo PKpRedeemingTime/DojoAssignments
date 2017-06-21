@@ -1,0 +1,7 @@
+<fieldset>
+  <h2>Player 1</h2>
+  <form (submit)="onSubmit(username)">
+    <label for="username">Github Username: <input type="text" name="username" required [(ngModel)]="username.username" #username='ngModel'></label>
+    <input class="submit" type="submit" name="submit" value="Get User">
+  </form>
+</fieldset>

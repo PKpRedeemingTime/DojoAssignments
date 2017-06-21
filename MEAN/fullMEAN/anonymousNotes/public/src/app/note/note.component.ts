@@ -14,13 +14,13 @@ export class NoteComponent implements OnInit {
     .then(res => this.notes = res)
     .catch(err => console.log(err))
    }
-  note = {};
   ngOnInit() {
   }
-
+  note = {};
   createNote() {
     this._NotesService.create(this.note)
-    .then( notes => this.notes = notes )
+    .then( notes => {this.notes = notes;
+    this.note = {};} )
     .catch(err => console.log(err))
   }
 

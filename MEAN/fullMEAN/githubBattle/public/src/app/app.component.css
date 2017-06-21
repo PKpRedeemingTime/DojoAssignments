@@ -1,0 +1,14 @@
+.wrapper {
+    margin: 0px auto;
+    width: 700px;
+    padding: 20px;
+}
+
+.header {
+    display:flex;
+    justify-content: space-between
+}
+
+.inline {
+    display:inline;
+}
