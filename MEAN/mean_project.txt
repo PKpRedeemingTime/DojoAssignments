@@ -1,16 +1,15 @@
 mkdir {name_of_project}
 cd {name_of_project}
 npm init -y
-npm install express body-parser mongoose --save
-touch server.js (update database name!)
+npm install bcrypt express-session express body-parser mongoose --save
+touch server.js
 mkdir server
 cd server
 mkdir config
 mkdir controllers
 mkdir models
 cd config
-touch routes.js
-touch mongoose.js
+touch routes.js mongoose.js
 cd ..
 cd models
 touch singular_name_of_model.js for each model
@@ -19,4 +18,5 @@ cd controllers
 touch plural_name_of_model.js for each model
 cd {name_of_project}
 ng new public --routing
+bower install angular-cookies
 ng build -w
