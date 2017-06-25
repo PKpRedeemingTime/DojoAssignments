@@ -1,0 +1,18 @@
+<h4>Add a new customer</h4>
+<h3 *ngIf="dupe">This name is already in our database!</h3>
+<form (submit)="addCustomer()">
+  <label for="name">Customer Name: <input type="text" name="name" [(ngModel)]="customer.name"></label>
+  <input class="add" type="submit" name="submit" value="Add">
+</form>
+<table>
+  <thead>
+    <th>Customer Name</th>
+    <th>Created Date</th>
+    <th>Actions</th>
+  </thead>
+  <tbody *ngFor="let customer of customers">
+    <td>{{customer.name}}</td>
+    <td>{{customer.createdAt | date:'medium'}}</td>
+    <td><button (click)="deleteCustomer(customer._id)">Remove</button></td>
+  </tbody>
+</table>

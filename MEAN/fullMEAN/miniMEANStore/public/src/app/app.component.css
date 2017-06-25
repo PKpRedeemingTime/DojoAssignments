@@ -1,0 +1,9 @@
+.whole {
+    margin: 0px auto;
+    width: 1000px;
+    padding: 20px;
+}
+
+p {
+    font-size: 20px;
+}

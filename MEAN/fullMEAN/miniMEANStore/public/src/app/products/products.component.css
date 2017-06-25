@@ -1,0 +1,38 @@
+.wrapper {
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+.add {
+    background-color: blue;
+    color: white;
+}
+
+label {
+    display:block;
+    margin-top: 10px;
+}
+
+input {
+    display:block;
+    margin-top: 10px;
+}
+
+.new {
+    width:250px;
+}
+
+.display {
+    width: 750px;
+    display:flex;
+}
+
+.prod_block {
+    width:130px;
+    display: inline;
+}

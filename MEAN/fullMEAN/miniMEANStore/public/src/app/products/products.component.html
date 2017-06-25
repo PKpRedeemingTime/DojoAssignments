@@ -1,0 +1,23 @@
+<div Class="wrapper">
+  <div class="new">
+    <h4>Add a new product</h4>
+    <form (submit)="addProduct()">
+      <label for="name">Name:</label>
+      <input type="text" name="name" [(ngModel)]="product.name">
+      <label for="image">Image (url):</label>
+      <input type="text" name="image" [(ngModel)]="product.image">
+      <label for="description">Description:</label>
+      <input type="text" name="description" [(ngModel)]="product.description">
+      <label for="quantity">Initial Quantity:</label>
+      <input type="number" name="quantity" [(ngModel)]="product.quantity">
+      <input class="add" type="submit"value="Create">
+    </form>
+  </div>
+  <div class="display">
+    <div class="prod_block" *ngFor="let product of products">
+      <img src={{product.image}} alt="picture" width:"110px">
+      <h5>{{product.name}}</h5>
+      <h5>({{product.quantity}} left)</h5>
+    </div>
+  </div>
+</div>
