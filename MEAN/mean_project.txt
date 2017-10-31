@@ -18,5 +18,19 @@ cd controllers
 touch plural_name_of_model.js for each model
 cd {name_of_project}
 ng new public --routing
-bower install angular-cookies
+cd public
+ng g c singular_name_of_page for each view
+ng g service plural_name_of_model for each model
 ng build -w
+code server.js
+add services, http, formsModule to module.js---(no services)
+code app-routing-module
+code routes.js
+code mongoose.js (update database)
+code controllers
+code models
+cd project level folder
+nodemon server.js
+
+
+

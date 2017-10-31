@@ -1,0 +1,6 @@
+<p>Hello!</p>
+<p>Please enter your name to join and share your ideas...</p>
+<form (submit)="createUser()">
+  <input type="text" name="name" [(ngModel)]="user.name">
+  <input type="submit" name="submit" value="Enter">
+</form>
