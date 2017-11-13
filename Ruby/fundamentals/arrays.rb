@@ -4,21 +4,21 @@ arr = [3,2,1,5,4]
 
 # puts arr.fetch(4)
 
-# arr.delete(3)
+# puts arr.delete(3)
 
-# arr.reverse!
+# puts arr.reverse!
 
-# pu
+# puts arr.length
 
-# arr.sort!
+# puts arr.sort!
 
-# arr.slice!(1..3)
+# puts arr.slice!(1..3)
 
-# arr.shuffle!
+# puts arr.shuffle!
 
 # puts arr.join(" ")
 
-# arr.insert(1,54)
+# puts arr.insert(1,54)
 
 # puts arr.values_at(2,0,4)
 

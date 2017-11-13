@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.pic').mouseenter(function(){
+                    $(this).attr('src', $(this).attr('data-alt-src'))
+                });
+                $('.pic').mouseleave(function(){
+                    $(this).attr('src', 'Finn.jpg')
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <img class="pic" src="Finn.jpg" alt="Finn!" data-alt-src="Hal.jpg" height="150">
+        <img class="pic" src="Finn.jpg" alt="Finn!" data-alt-src="Hal.jpg" height="150">
+        <img class="pic" src="Finn.jpg" alt="Finn!" data-alt-src="Hal.jpg" height="150">
+        <img class="pic" src="Finn.jpg" alt="Finn!" data-alt-src="Hal.jpg" height="150">
+        <img class="pic" src="Finn.jpg" alt="Finn!" data-alt-src="Hal.jpg" height="150">
+    </body>
+</html>

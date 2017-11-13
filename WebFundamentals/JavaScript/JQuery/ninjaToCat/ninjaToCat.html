@@ -22,3 +22,10 @@
         <img src="cat4.png" alt="cat-4" data-alt-src="ninja4.png">
     </body>
 </html>
+
+$('.pic').mouseenter(function(){
+    $(this).attr('src', $(this).attr('data-alt-src'))
+});
+$('.pic').mouseleave(function(){
+    $(this).attr('src', 'Finn.jpg')
+});
