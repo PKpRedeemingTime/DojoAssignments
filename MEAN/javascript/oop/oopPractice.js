@@ -49,3 +49,24 @@
 //     console.log("I am the founder!");
 // }
 // Michael.introduce();
+
+function Car(make,model) {
+    let odometer = 0;
+    this.make= make;
+    this.model = model;
+    function updateOdometer(distance) {
+        odometer += distance;
+    }
+    this.readOdometer = function() {
+        return odometer;
+    }
+    this.drive = function(distance) {
+        updateOdometer(distance);
+        return this;
+    }
+}
+
+const myCarInstance = new Car("Chevy","Camaro");
+myCarInstance.drive(50).drive(90);
+console.log(myCarInstance.odometer);
+console.log(myCarInstance.readOdometer());
