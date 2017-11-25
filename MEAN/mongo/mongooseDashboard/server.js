@@ -25,13 +25,7 @@ app.get('/', function(req, res) {
     })
 })
 app.get('/new', function(req, res) {
-    Panther.find({}, function(err, panthers) {
-        if(err) {
-            console.log('something went wrong');
-        } else {
-            res.render('new', { panthers: panthers });
-        }
-    })
+    res.render('new');
 })
 app.get('/:id/show', function(req, res) {
     Panther.find({_id:req.params.id}, function(err, response) {

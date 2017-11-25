@@ -13,7 +13,7 @@ var server = app.listen(8000, function() {
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function (socket){
     socket.on("posting_form", function (data){
-        var random_number = Math.floor((Math.random() * 1000) + 1);
+        var random_number = Math.floor((Math.ceil(Math.random() * 1000)));
         socket.emit('updated_message', {response: data }); 
         socket.emit('random_number', {response: random_number}); 
     })

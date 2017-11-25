@@ -11,7 +11,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, res) {
-    res.send("Hello Express");
+    res.send("<h1>Hello Express</h1>");
 })
 
 app.get("/users", function (request, res){

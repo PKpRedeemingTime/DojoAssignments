@@ -68,7 +68,7 @@
 // // notice lack of parentheses after makeAlfredo.
 // // Remember: we want to pass the function, not execute it and pass a return value.
 // console.log(makePasta("Farfalle", makeAlfredo));
-// // 
+// 
 
 // function leadBootcamp(language, leader){
 //     var outcome = leader(language);
@@ -121,30 +121,35 @@
 // leadBootcamp('java_android', Mike);
 // leadBootcamp('java_android', Charlie);
 // leadBootcamp('java_android', Jimmy);
-// // 
+// 
 
-function getStuffFromDatabase(callback){
-  var data;
-  var myTimer = setTimeout(function(){
+function getStuffFromDatabase(resolve,reject){
+  var data = "whee"
+  setTimeout(function(){
     if (typeof(callback) == 'function'){
-      //it just got back from the DB!
       data = [{name:'Todd'},{name:'Michael'},{name:'Portia'}];
-      callback(data);
+      resolve(data);
     }
-  }, 10000);
-  // it takes 10 seconds to get anything back <- you should fix your cloud server.!!!
+  }, 1000);
+  // reject(); //comment this line in and out!
   return data;
-}    
-//simulated request (failing);
-function requestDataFromDatabase(){
-  var data = getStuffFromDatabase(); // this should return my data right??
-  console.log(data);
 }
-function catchFly(){
-  console.log('I just caught a fly!');
+function requestDataFromDatabase(){
+console.log('running');
+//creates promise
+var data = new Promise(function(resolve,reject){
+  getStuffFromDatabase(resolve,reject); // kind of like a shiny callback
+});
+// if promise is successful (keeps me from putting all the logic in the callback)
+data.then(function(data){
+  console.log(data, "ASynchronous");
+  for (var i = 0; i < data.length; i ++){
+    console.log(data[i].name);
+  }
+});
+data.catch(function(){
+  console.log('failure');
+})
+console.log('end');
 }
 requestDataFromDatabase();
-// keep running my program!
-console.log('Hello');
-catchFly();
-//

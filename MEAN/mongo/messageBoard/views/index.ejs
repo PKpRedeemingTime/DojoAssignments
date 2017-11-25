@@ -14,9 +14,9 @@
     <h3>Name: <%= messages[x].name %></h3>
     <h4>Message: <%= messages[x].message %></h4>
     <div style="margin-left:100px">
-        <% for(var y = 0; y < messages[x]._comments.length; y++) { %>
-            <p>Name: <%= messages[x]._comments[y].name %></p>
-            <p>Comment: <%= messages[x]._comments[y].comment %></p>
+        <% for(var y = 0; y < messages[x].comments.length; y++) { %>
+            <p>Name: <%= messages[x].comments[y].name %></p>
+            <p>Comment: <%= messages[x].comments[y].comment %></p>
         <% } %>
         <form action="<%= '/comment/' + messages[x]._id %>"  method="post">
             <label style="display:block;" for="name">Name: <input type="text" name="name"></label>

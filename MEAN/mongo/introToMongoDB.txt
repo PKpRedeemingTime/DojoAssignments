@@ -22,15 +22,15 @@ db.students.insert({name: "Alex", home_state: "IL", lucky_number: 23, birthday: 
 
 db.students.find().pretty()
 
-6) Retrieve all students who are from California (San Jose Dojo) or Washington (Seattle Dojo).
+6) Retrieve all students who are from Maryland or Washington DC.
 
-db.students.find({home_state: "MO"}).pretty()
+db.students.find( { $or: [ { home_state: "MO" }, { home_state: "DC" } ] } ).pretty()
 
 7) Get all students whose lucky number is: (greater than 3, less than or equal to 10, between 1 and 9 (inclusive))
 
 db.students.find({lucky_number: {$gt: 3}}).pretty()
 db.students.find({lucky_number: {$lte: 10}}).pretty()
-db.students.find({lucky_number: {$lte: 10} && {$lte: 10}}).pretty()
+db.students.find({lucky_number: {$gte: 0} && {$lte: 10}}).pretty()
 
 8) Add a field to each student collection called 'interests' that is an ARRAY.  It should contain the following entries: 'coding', 'brunch', 'MongoDB'. Do this in ONE operation.
 

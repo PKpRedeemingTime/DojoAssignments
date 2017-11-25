@@ -8,11 +8,6 @@ var server = http.createServer(function (request, response){
             response.write(contents);
             response.end();
         });
-        fs.readFile('style.css', 'utf8', function (errors, contents){
-            response.writeHead(200, {'Content-Type': 'text/css'});
-            response.write(contents);
-            response.end();
-        });
     }
     else {
         response.writeHead(404);

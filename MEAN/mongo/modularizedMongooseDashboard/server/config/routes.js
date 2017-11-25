@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var panthers = require('../controllers/panthers.js');
 module.exports = function(app) {
+  app.get('/', function(req, res) {
+    console.log("inside my routes");
+    panthers.index(req, res);
+  })
   app.get('/panthers', function(req, res) {
     console.log("inside my routes");
     panthers.index(req, res);

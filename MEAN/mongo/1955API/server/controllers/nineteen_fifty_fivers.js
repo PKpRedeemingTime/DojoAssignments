@@ -38,14 +38,7 @@ module.exports = {
             if(err) {
                 res.json(err);
             } else {
-                Nineteen_Fifty_Fiver.find({}, function(err, data) {
-                    if(err) {
-                        res.json(err);
-                    }
-                    else {
-                        res.json(data);
-                    }
-                })
+                res.redirect('/');
             }
         })
     },

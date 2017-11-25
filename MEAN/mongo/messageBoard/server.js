@@ -10,7 +10,7 @@ var Schema = mongoose.Schema;
 var MessageSchema = new mongoose.Schema({
     name:  { type: String, required: true, minlength: 4 },
     message: { type: String, required: true },
-    _comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}], //The underscore here shouldn't be used, it's only used on the many side, not the one side
+    comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}]
 }, {timestamps: true });
 var CommentSchema = new mongoose.Schema({
     _message: {type: Schema.Types.ObjectId, ref: 'Message'},
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, './static')));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
-    Message.find({}, false, true).populate('_comments').exec(function(err, messages){
+    Message.find({}, false, true).populate('comments').exec(function(err, messages){
 	    res.render('index', {messages: messages});
 	});
 });
@@ -34,7 +34,7 @@ app.post('/message', function(req, res) {
     message.save(function(err) {
         if(err) {
             console.log(err);
-            Message.find({}, false, true).populate('_comments').exec(function(err, messages){
+            Message.find({}, false, true).populate('comments').exec(function(err, messages){
                 res.render('index', {messages: messages, errors: message.errors });
             });
         } 
@@ -49,7 +49,7 @@ app.post('/comment/:id', function(req, res) {
     Message.findOne({_id: message_id}, function(err,message) {
         var comment = new Comment({name: req.body.name, comment: req.body.comment});
         comment._message = message._id;
-        Message.update({_id: message._id}, {$push: {"_comments": comment}}, function(err) {});
+        Message.update({_id: message._id}, {$push: {"comments": comment}}, function(err) {});
         comment.save(function(err) {
             if(err) {
                 console.log(err);

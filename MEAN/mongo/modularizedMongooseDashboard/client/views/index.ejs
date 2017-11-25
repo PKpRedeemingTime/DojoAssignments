@@ -1,8 +1,8 @@
 <h1>Check out all these different Panthers!</h1>
-<a href="/new">Click here to add a panther to our database!</a>
+<a href="/panthers/new">Click here to add a panther to our database!</a>
 <div class="display_users">
-    <% for(var i = 0; i < panthers.length; i++) { %>
-        <h3><a href="/<%= panthers[i].id %>/show">Name: <%= panthers[i].name %></a></h3>
+    <% for(var i in panthers) { %>
+        <h3><a href="panthers/<%= panthers[i].id %>/show">Name: <%= panthers[i].name %></a></h3>
         <hr></hr>
     <% } %>
 </div>
