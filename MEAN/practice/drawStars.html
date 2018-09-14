@@ -1,0 +1,36 @@
+<html>
+<head>
+  <script>
+        function starString(num) {
+            if(typeof num == 'number') {
+                var str = "";
+                for(var i = 0; i < num; i++) {
+                    str += "*";
+                }
+                console.log(str);
+            }
+            else {
+                for(var i = 0; i < num.length; i++) {
+                    if(typeof num[i] == 'number') {
+                        var str = "";
+                        for(var x = 0; x < num[i]; x++) {
+                            str += "*";
+                        }
+                        console.log(str);   
+                    }
+                    else {
+                        var str = "";
+                        for(var x = 0; x < num[i].length; x++) {
+                            str += num[i][0].toLowerCase();
+                        }
+                        console.log(str);
+                    }
+                }
+            }
+        }
+        let stars = starString([8,2,"String",4,"HELLO",7]);
+    </script>  
+</head>
+<body> 
+</body>
+</html>

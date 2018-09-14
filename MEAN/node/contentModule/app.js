@@ -17,7 +17,7 @@ var server = http.createServer(function (request, response){
         });
     }
     else if(request.url === '/stylesheets/style.css'){
-        fs.readFile('stylesheet/style.css', 'utf8', function (errors, contents) {
+        fs.readFile('./stylesheets/style.css', 'utf8', function (errors, contents) {
           response.write(contents);
           response.end();
         });
